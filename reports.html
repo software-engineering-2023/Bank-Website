@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cilviki Bank - Report Issue</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+    <div class="backGroundForTheLogo">
+        <div class="left-section">
+            <img src="public/playground_assets/logo133-50sg-200h.png" alt="logo" id="img1" class="logo">
+        </div>
+    </div>
+    <div class="header">
+
+        <h1>Report Issue</h1>
+    </div>
+    <form id="reportForm">
+        <label for="issueType">Issue Type:</label>
+        <select id="issueType" name="issueType">
+            <option value="bug">Bug</option>
+            <option value="transaction">Transaction Issue</option>
+            <option value="account">Account Issue</option>
+        </select>
+        <br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="5"></textarea>
+        <br>
+        <button type="submit">Submit Report</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,36 +1,95 @@
+/* General styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  text-align: center;
+header {
+  background-color: #336633;
+  color: #fff;
+  padding: 20px;
 }
 
-form {
-  margin-top: 20px;
+header h1 {
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+.report-container {
+  position: relative;
+}
+
+.report-slider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.report {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.slider-navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  background-color: #336633;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 10px;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-select,
 textarea {
   width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
+  resize: vertical;
 }
 
 button[type="submit"] {
   padding: 10px 20px;
+  background-color: #336633;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
-.backGroundForTheLogo {
-  background-color: rgba(4, 49, 54, 255);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
+/* Responsive styles */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 24px;
+  }
+  
+  main {
+    padding: 10px;
+  }
+  
+  .report {
+    padding: 10px;
+  }
+  
+  .slider-navigation {
+    position: static;
+    margin-top: 10px;
+  }
 }

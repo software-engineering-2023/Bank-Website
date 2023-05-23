@@ -1,36 +1,47 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Cilviki Bank - Report Issue</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Reports</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div class="backGroundForTheLogo">
-        <div class="left-section">
-            <img src="public/playground_assets/logo133-50sg-200h.png" alt="logo" id="img1" class="logo">
+  <header>
+    <h1>Customer Reports</h1>
+  </header>
+  
+  <main>
+    <div class="report-container">
+      <div id="reportSlider" class="report-slider">
+        <div class="report">
+          <h2>Report 1</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisi augue. Morbi a justo vel dui feugiat consectetur id id mi. Fusce eu fermentum libero. Ut tincidunt interdum nunc, vitae luctus odio consectetur at. Suspendisse convallis malesuada eros.</p>
         </div>
+      </div>
+      <div class="slider-navigation">
+        <button id="prevButton" class="nav-button">&lt;</button>
+        <button id="nextButton" class="nav-button">&gt;</button>
+      </div>
     </div>
-    <div class="header">
-
-        <h1>Report Issue</h1>
-    </div>
+    
     <form id="reportForm">
-        <label for="issueType">Issue Type:</label>
-        <select id="issueType" name="issueType">
-            <option value="bug">Bug</option>
-            <option value="transaction">Transaction Issue</option>
-            <option value="account">Account Issue</option>
+      <h2>Submit a Report</h2>
+      <div class="form-group">
+        <label for="reportType">Report Type:</label>
+        <select id="reportType" name="reportType">
+          <option value="bug">Bug Report</option>
+          <option value="account">Account Report</option>
         </select>
-        <br>
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" rows="5"></textarea>
-        <br>
-        <button type="submit">Submit Report</button>
+      </div>
+      <div class="form-group">
+        <label for="reportContent">Report Content:</label>
+        <textarea id="reportContent" name="reportContent" rows="4"></textarea>
+      </div>
+      <button type="submit">Submit</button>
     </form>
-    <script src="script.js"></script>
-</body>
+  </main>
 
+  <script src="script.js"></script>
+</body>
 </html>

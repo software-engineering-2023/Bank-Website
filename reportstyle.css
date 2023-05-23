@@ -25,6 +25,7 @@ main {
 
 .report-slider {
   display: flex;
+  flex-direction: column-reverse;
   transition: transform 0.3s ease-in-out;
 }
 

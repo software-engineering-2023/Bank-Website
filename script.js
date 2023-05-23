@@ -28,8 +28,8 @@ function showNextReport() {
 }
 
 function updateSlider() {
-  const slideWidth = reportSlider.offsetWidth;
-  reportSlider.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+  const slideHeight = reportSlider.offsetHeight;
+  reportSlider.style.transform = `translateY(-${slideHeight * currentSlide}px)`;
 }
 
 function submitReport(event) {
@@ -44,12 +44,11 @@ function submitReport(event) {
     <h2>Report ${reportSlider.childElementCount + 1}</h2>
     <p>${reportContent}</p>
   `;
-  reportSlider.appendChild(newReport);
+  reportSlider.insertBefore(newReport, reportSlider.firstChild);
 
   document.getElementById('reportContent').value = '';
 
-  // Automatically switch to the newly added report
-  currentSlide = reportSlider.childElementCount - 1;
+  currentSlide = 0;
   updateSlider();
 }
 

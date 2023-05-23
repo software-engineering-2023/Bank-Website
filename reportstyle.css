@@ -6,7 +6,7 @@ body {
 }
 
 header {
-  background-color: #336633;
+  background-color: rgba(4, 49, 54, 255);
   color: #fff;
   padding: 20px;
 }
@@ -20,39 +20,20 @@ main {
 }
 
 .report-container {
-  position: relative;
-}
-
-.report-slider {
-  display: flex;
-  flex-direction: column-reverse;
-  transition: transform 0.3s ease-in-out;
+  margin-top: 20px;
 }
 
 .report {
-  width: 100%;
   border: 1px solid #ccc;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
-.slider-navigation {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.report h2,
+.report h3 {
+  margin-top: 0;
 }
 
-.nav-button {
-  padding: 10px 20px;
-  background-color: #336633;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-/* Form styles */
 .form-group {
   margin-bottom: 10px;
 }
@@ -69,10 +50,44 @@ textarea {
 
 button[type="submit"] {
   padding: 10px 20px;
-  background-color: #336633;
+  background-color: rgba(4, 49, 54, 255);
   color: #fff;
   border: none;
   cursor: pointer;
+}
+
+.verification-message {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Green bar styles */
+.bar {
+  background-color: rgba(4, 49, 54, 255);
+  height: 3px;
+  margin-top: 10px;
+}
+
+.bar-background {
+  background-color: rgba(4, 49, 54, 255);
+  height: 1px;
+  margin-bottom: 10px;
+}
+
+.bar-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.bar-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(4, 49, 54, 255);
 }
 
 /* Responsive styles */
@@ -86,11 +101,12 @@ button[type="submit"] {
   }
   
   .report {
-    padding: 10px;
+    width: calc(100% - 20px);
+    margin: 10px;
   }
-  
-  .slider-navigation {
-    position: static;
-    margin-top: 10px;
-  }
+}
+footer{
+  background-color: rgba(4, 49, 54, 255);
+  color: #fff;
+  padding: 20px;
 }

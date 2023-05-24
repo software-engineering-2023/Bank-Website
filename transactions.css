@@ -191,3 +191,24 @@ nav a:nth-child(6):hover~.animation {
     color: white;
     text-decoration: none;
 }
+.report-problem-btn {
+    background-color: #0b7079;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .report-problem-btn:hover {
+    background-color: #1abc9c;
+  }
+  
+  .report-problem-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0b7079;
+  }
+
+  

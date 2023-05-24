@@ -29,8 +29,7 @@ body {
 
 /* Page styles */
 .container {
-    max-width: 800px;
-    margin: 50px auto;
+    min-height: 100vh;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -46,6 +45,7 @@ body {
 
 .dropdown-container {
     display: flex;
+    justify-content: center; /* Updated to center align */
     align-items: center;
     margin-bottom: 20px;
 }
@@ -80,11 +80,10 @@ select {
 
 nav {
     position: sticky;
-    margin: auto;
+    top: 0;
     width: 100%;
-    height: 50 px;
+    height: 50px;
     background: #0b7079;
-    /* border-radius: 8px; */
     font-size: 0;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1);
 }
@@ -104,7 +103,6 @@ nav a {
 nav .animation {
     position: absolute;
     height: 100%;
-
     top: 0;
     z-index: 0;
     background-color: #1abc9c;
@@ -176,6 +174,7 @@ nav a:nth-child(6):hover~.animation {
     background-color: rgba(4, 49, 54, 255);
     color: white;
     padding: 20px;
+    margin-top: 20px;
 }
 
 .footer-content {

@@ -1,0 +1,81 @@
+/* Reset default styles */
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header styles */
+  .header {
+    background-color: rgba(4, 49, 54, 255);
+    padding: 20px;
+    color: #ffffff;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 150px;
+    height: 70px;
+  }
+  
+  .header-title {
+    margin-left: 20px;
+    font-size: 24px;
+  }
+  
+  /* Page styles */
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page-title {
+    color: rgba(4, 49, 54, 255);
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .dropdown-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  select {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .transaction-history {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .transaction-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .transaction-item p {
+    margin: 0;
+  }
+  
+  /* Add more custom styles as per your preference */
+  

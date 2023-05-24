@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="transactions.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <img src="public\playground_assets\logo133-50sg-200h.png" alt="Logo" class="logo">
+      <h1 class="header-title">Transaction Viewer</h1>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <h2 class="page-title">View Transactions</h2>
+      <div class="dropdown-container">
+        <label for="transaction-type">Select Transaction Type:</label>
+        <select id="transaction-type">
+          <option value="">Select Type</option>
+          <option value="bank-account">Bank Account Transactions</option>
+          <option value="credit-card">Credit Card Transactions</option>
+        </select>
+      </div>
+      <div id="transaction-history" class="transaction-history">
+        <!-- Dummy transaction history will be dynamically populated here -->
+      </div>
+    </div>
+  </main>
+  <script src="transactions.js"></script>
+</body>
+</html>

@@ -21,49 +21,50 @@
         <a href="RefrencePage.html">Refrence</a>
         <div class="animation start-home animation"></div>
     </nav>
-    <div class="bill-type">
+    <div class="bill-type" data-bill-type="Gas">
         <h3>Gas Bill</h3>
         <img src="public/playground_assets/gas.png" alt="Gas Bill">
         <button class="show-details-button">Show Details</button>
         <div class="details" id="gas-details">
-            <p class="due-date-placeholder">Due Date: <span id="gas-due-date"></span></p>
-            <p class="fees-placeholder">Fees: $<span id="gas-amount"></span></p>
+          <p class="due-date">Due Date: January 31, 2023</p>
+          <p class="amount">Fees: $50</p>
+          <button onclick="payBill('Gas')">Pay Now</button>
         </div>
-        <button onclick="payBill('Gas')">Pay Now</button>
-    </div>
-
-    <div class="bill-type">
+      </div>
+      
+      <div class="bill-type" data-bill-type="Water">
         <h3>Water Bill</h3>
         <img src="public/playground_assets/water.png" alt="Water Bill">
         <button class="show-details-button">Show Details</button>
         <div class="details" id="water-details">
-            <p class="due-date-placeholder">Due Date: <span id="water-due-date"></span></p>
-            <p class="fees-placeholder">Fees: $<span id="water-amount"></span></p>
+          <p class="due-date">Due Date: February 15, 2023</p>
+          <p class="amount">Fees: $35</p>
+          <button onclick="payBill('Water')">Pay Now</button>
         </div>
-        <button onclick="payBill('Water')">Pay Now</button>
-    </div>
-
-    <div class="bill-type">
+      </div>
+      
+      <div class="bill-type" data-bill-type="Electricity">
         <h3>Electricity Bill</h3>
         <img src="public/playground_assets/elec.png" alt="Electricity Bill">
         <button class="show-details-button">Show Details</button>
         <div class="details" id="electricity-details">
-            <p class="due-date-placeholder">Due Date: <span id="electricity-due-date"></span></p>
-            <p class="fees-placeholder">Fees: $<span id="electricity-amount"></span></p>
+          <p class="due-date">Due Date: February 28, 2023</p>
+          <p class="amount">Fees: $75</p>
+          <button onclick="payBill('Electricity')">Pay Now</button>
         </div>
-        <button onclick="payBill('Electricity')">Pay Now</button>
-    </div>
-
-    <div class="bill-type">
+      </div>
+      
+      <div class="bill-type" data-bill-type="Telephone">
         <h3>Telephone Bill</h3>
         <img src="public/playground_assets/phone.png" alt="Telephone Bill">
         <button class="show-details-button">Show Details</button>
         <div class="details" id="telephone-details">
-            <p class="due-date-placeholder">Due Date: <span id="telephone-due-date"></span></p>
-            <p class="fees-placeholder">Fees: $<span id="telephone-amount"></span></p>
+          <p class="due-date">Due Date: March 10, 2023</p>
+          <p class="amount">Fees: $45</p>
+          <button onclick="payBill('Telephone')">Pay Now</button>
         </div>
-        <button onclick="payBill('Telephone')">Pay Now</button>
-    </div>
+      </div>
+      
 
     <p class="submission-message">Payment submitted successfully.</p>
 

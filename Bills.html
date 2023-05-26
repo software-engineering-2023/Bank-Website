@@ -25,44 +25,44 @@
         <h3>Gas Bill</h3>
         <img src="public/playground_assets/gas.png" alt="Gas Bill">
         <button class="show-details-button">Show Details</button>
-        <div class="details">
-            <p id="gas-due-date"></p>
-            <p id="gas-amount"></p>
-            <button onclick="payBill('Gas')">Pay Now</button>
+        <div class="details" id="gas-details">
+            <p class="due-date-placeholder">Due Date: <span id="gas-due-date"></span></p>
+            <p class="fees-placeholder">Fees: $<span id="gas-amount"></span></p>
         </div>
+        <button onclick="payBill('Gas')">Pay Now</button>
     </div>
 
     <div class="bill-type">
         <h3>Water Bill</h3>
         <img src="public/playground_assets/water.png" alt="Water Bill">
         <button class="show-details-button">Show Details</button>
-        <div class="details">
-            <p id="water-due-date"></p>
-            <p id="water-amount"></p>
-            <button onclick="payBill('Water')">Pay Now</button>
+        <div class="details" id="water-details">
+            <p class="due-date-placeholder">Due Date: <span id="water-due-date"></span></p>
+            <p class="fees-placeholder">Fees: $<span id="water-amount"></span></p>
         </div>
+        <button onclick="payBill('Water')">Pay Now</button>
     </div>
 
     <div class="bill-type">
         <h3>Electricity Bill</h3>
         <img src="public/playground_assets/elec.png" alt="Electricity Bill">
         <button class="show-details-button">Show Details</button>
-        <div class="details">
-            <p id="electricity-due-date"></p>
-            <p id="electricity-amount"></p>
-            <button onclick="payBill('Electricity')">Pay Now</button>
+        <div class="details" id="electricity-details">
+            <p class="due-date-placeholder">Due Date: <span id="electricity-due-date"></span></p>
+            <p class="fees-placeholder">Fees: $<span id="electricity-amount"></span></p>
         </div>
+        <button onclick="payBill('Electricity')">Pay Now</button>
     </div>
 
     <div class="bill-type">
         <h3>Telephone Bill</h3>
         <img src="public/playground_assets/phone.png" alt="Telephone Bill">
         <button class="show-details-button">Show Details</button>
-        <div class="details">
-            <p id="telephone-due-date"></p>
-            <p id="telephone-amount"></p>
-            <button onclick="payBill('Telephone')">Pay Now</button>
+        <div class="details" id="telephone-details">
+            <p class="due-date-placeholder">Due Date: <span id="telephone-due-date"></span></p>
+            <p class="fees-placeholder">Fees: $<span id="telephone-amount"></span></p>
         </div>
+        <button onclick="payBill('Telephone')">Pay Now</button>
     </div>
 
     <p class="submission-message">Payment submitted successfully.</p>

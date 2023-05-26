@@ -129,14 +129,15 @@ body {
     margin-bottom: 10px;
   }
   
-  .details {
-    display: none;
-    margin-top: 20px;
-  }
-  
   .details p {
     margin: 5px 0;
+    color: #000; /* Change the color to black */
   }
+  
+  .details p strong {
+    color: white; /* Change the color of the strong element to white */
+  }
+  
   
   button {
     background-color: rgba(4, 49, 54, 255);

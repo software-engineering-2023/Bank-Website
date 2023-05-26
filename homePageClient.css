@@ -204,7 +204,7 @@ nav a:nth-child(6):hover~.animation {
     color: green;
 }
 
-.buttonCardLoan{
+.buttonCardLoan {
     width: 450px;
     height: 115px;
     padding: 30px 20px;
@@ -219,12 +219,12 @@ nav a:nth-child(6):hover~.animation {
     box-shadow: 0 0 11px rgba(33, 33, 33, 0.5);
 }
 
-.CardLoanBlock{
+.CardLoanBlock {
     background-color: #fafafa;
     padding-bottom: 130px;
 }
 
-.NewsContainer{
+.NewsContainer {
     width: 75%;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -232,14 +232,98 @@ nav a:nth-child(6):hover~.animation {
     font-size: 16px;
 }
 
-#BlogArticle{
+#BlogArticle {
     background-color: #fafafa;
+    height: 500px;
 }
 
-.imagesForBlogs{
-    width: 75%;
+html {
+    scroll-behavior: smooth;
+}
+
+.imagesForBlogs {
+    position: relative;
+    width: 800px;
+    height: 200px;
+    overflow: hidden;
+    margin-left: 2%;
+}
+
+.imagesForBlogs img {
+    padding-right: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.imagesForBlogs .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: height 0.3s ease;
+    overflow: hidden;
+}
+
+.imagesForBlogs .overlay1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: height 0.3s ease;
+    overflow: hidden;
+}
+
+.imagesForBlogs:hover .overlay1 {
+    height: 100%;
+}
+
+.imagesForBlogs .text {
+    color: white;
+    padding: 10px;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.imagesForBlogs:hover img {
+    transform: scale(1.1);
+}
+
+.imagesForBlogs:hover .overlay {
+    height: 100%;
+}
+
+.imagesForBlogs:hover .text {
+    transform: translateY(-20%);
+}
+
+.imagesDiv {
     display: flex;
-    justify-content: space-between;
-    /* float: center; */
-    margin-left: 7%;
+    justify-content: space-evenly;
+}
+
+#Awards {
+    background-color: white;
+    height: 500px;
+    width: 800px;
+}
+
+.awardsContainer{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    /* padding-left: 13%; */
+    font-size: 16px;
+}
+
+.award{
+    width: 300px;
+}
+
+footer{
+    
 }

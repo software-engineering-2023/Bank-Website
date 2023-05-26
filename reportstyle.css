@@ -7,13 +7,9 @@ body {
 
 header {
   background-color: rgba(4, 49, 54, 255);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  width: 100%;
-  height: 90px;
-  
+  padding: 20px;
+  color: #ffffff;
+
 }
 
 .logo {
@@ -21,13 +17,13 @@ header {
   height: 70px;
 
 }
+
 nav {
   position: sticky;
-  margin: auto;
+  top: 0;
   width: 100%;
-  height: 50 px;
+  height: 50px;
   background: #0b7079;
-  /* border-radius: 8px; */
   font-size: 0;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1);
 }
@@ -47,7 +43,6 @@ nav a {
 nav .animation {
   position: absolute;
   height: 100%;
-
   top: 0;
   z-index: 0;
   background-color: #1abc9c;
@@ -114,7 +109,6 @@ nav a:nth-child(6):hover~.animation {
   width: 120px;
   left: 590px;
 }
-
 header h1 {
   margin: 0;
 }

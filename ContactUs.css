@@ -165,8 +165,19 @@ nav a:nth-child(6):hover~.animation {
 
 .container {
     background-color: white;
-    width: 80%;
+    width: 90%;
     top: 50%;
     left: 50%;
     margin-top: 100px;
+}
+
+.miniContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+form{
+    border-radius: 10px;
+    border-style: solid;
+    width: 45%;
 }

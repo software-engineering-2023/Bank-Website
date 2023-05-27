@@ -179,3 +179,39 @@ button {
   color: white;
   text-decoration: none;
 }
+.credit-card-balance {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.bill-type {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.bill-type h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.bill-type img {
+  width: 100px;
+  height: auto;
+}
+
+.show-details-button {
+  margin-bottom: 10px;
+}
+
+.details {
+  margin-top: 10px;
+}
+
+.submission-message {
+  display: none;
+  color: green;
+}
+
+.error-message {
+  color: red;
+}

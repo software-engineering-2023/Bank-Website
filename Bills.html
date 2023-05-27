@@ -2,77 +2,90 @@
 <html>
 
 <head>
-    <title>Bank Bill Payment</title>
-    <link rel="stylesheet" type="text/css" href="Bills.css">
+  <title>Bank Bill Payment</title>
+  <link rel="stylesheet" type="text/css" href="Bills.css">
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="public\playground_assets\logo.png" alt="Bank Logo">
-        </div>
-    </header>
-    <nav>
-        <a href="HomePage.html">Home</a>
-        <a href="Aboutus.html">About Us</a>
-        <a href="Radio&OptimizationPage.html">Radio</a>
-        <a href="TransmissionPage.html">Transmission</a>
-        <a href="SupplysPage.html">Supply</a>
-        <a href="RefrencePage.html">Refrence</a>
-        <div class="animation start-home animation"></div>
-    </nav>
-    <div class="bill-type" data-bill-type="Gas">
-        <h3>Gas Bill</h3>
-        <img src="public/playground_assets/gas.png" alt="Gas Bill">
-        <button class="show-details-button">Show Details</button>
-        <div class="details" id="gas-details">
-            <p class="due-date">Due Date: January 31, 2023</p>
-            <p class="amount">Fees: $50</p>
-            <button onclick="payBill('Gas', this)">Pay Now</button>
-        </div>
+  <header>
+    <div class="logo">
+      <img src="public/playground_assets/logo133-50sg-200h.png" alt="Bank Logo">
     </div>
+  </header>
+  <nav>
+    <a href="HomePage.html">Home</a>
+    <a href="Aboutus.html">About Us</a>
+    <a href="Radio&OptimizationPage.html">Radio</a>
+    <a href="TransmissionPage.html">Transmission</a>
+    <a href="SupplysPage.html">Supply</a>
+    <a href="RefrencePage.html">Refrence</a>
+    <div class="animation start-home animation"></div>
+  </nav>
 
-    <div class="bill-type" data-bill-type="Water">
-        <h3>Water Bill</h3>
-        <img src="public/playground_assets/water.png" alt="Water Bill">
-        <button class="show-details-button">Show Details</button>
-        <div class="details" id="water-details">
-            <p class="due-date">Due Date: February 15, 2023</p>
-            <p class="amount">Fees: $35</p>
-            <button onclick="payBill('Water', this)">Pay Now</button>
-        </div>
+  <div class="credit-card-balance">
+    <h3>Credit Card Balance: $200</h3>
+  </div>
+
+  <div class="bill-type" data-bill-type="Gas">
+    <h3>Gas Bill</h3>
+    <img src="public/playground_assets/gas.png" alt="Gas Bill">
+    <button class="show-details-button">Show Details</button>
+    <div class="details" id="gas-details">
+      <p class="due-date">Due Date: January 31, 2023</p>
+      <p class="fees">Fees: $50</p>
+      <button class="pay-now-button">Pay Now</button>
+      <p class="submission-message">Payment submitted successfully.</p>
+      <p class="error-message"></p>
     </div>
+  </div>
 
-    <div class="bill-type" data-bill-type="Electricity">
-        <h3>Electricity Bill</h3>
-        <img src="public/playground_assets/elec.png" alt="Electricity Bill">
-        <button class="show-details-button">Show Details</button>
-        <div class="details" id="electricity-details">
-            <p class="due-date">Due Date: February 28, 2023</p>
-            <p class="amount">Fees: $75</p>
-            <button onclick="payBill('Electricity', this)">Pay Now</button>
-        </div>
+  <div class="bill-type" data-bill-type="Water">
+    <h3>Water Bill</h3>
+    <img src="public/playground_assets/water.png" alt="Water Bill">
+    <button class="show-details-button">Show Details</button>
+    <div class="details" id="water-details">
+      <p class="due-date">Due Date: February 15, 2023</p>
+      <p class="fees">Fees: $35</p>
+      <button class="pay-now-button">Pay Now</button>
+      <p class="submission-message">Payment submitted successfully.</p>
+      <p class="error-message"></p>
     </div>
+  </div>
 
-    <div class="bill-type" data-bill-type="Telephone">
-        <h3>Telephone Bill</h3>
-        <img src="public/playground_assets/phone.png" alt="Telephone Bill">
-        <button class="show-details-button">Show Details</button>
-        <div class="details" id="telephone-details">
-            <p class="due-date">Due Date: March 10, 2023</p>
-            <p class="amount">Fees: $45</p>
-            <button onclick="payBill('Telephone', this)">Pay Now</button>
-        </div>
+  <div class="bill-type" data-bill-type="Electricity">
+    <h3>Electricity Bill</h3>
+    <img src="public/playground_assets/elec.png" alt="Electricity Bill">
+    <button class="show-details-button">Show Details</button>
+    <div class="details" id="electricity-details">
+      <p class="due-date">Due Date: February 28, 2023</p>
+      <p class="fees">Fees: $75</p>
+      <button class="pay-now-button">Pay Now</button>
+      <p class="submission-message">Payment submitted successfully.</p>
+      <p class="error-message"></p>
     </div>
+  </div>
 
-    <p class="submission-message">Payment submitted successfully.</p>
-    <footer class="footer">
-      <div class="footer-content">
-        <p>Contact us: 19111</p>
-        <button class="report-problem-btn">Report a Problem</button>
-      </div>
-    </footer>
-    <script src="Bills.js"></script>
+  <div class="bill-type" data-bill-type="Telephone">
+    <h3>Telephone Bill</h3>
+    <img src="public/playground_assets/phone.png" alt="Telephone Bill">
+    <button class="show-details-button">Show Details</button>
+    <div class="details" id="telephone-details">
+      <p class="due-date">Due Date: March 10, 2023</p>
+      <p class="fees">Fees: $45</p>
+      <button class="pay-now-button">Pay Now</button>
+      <p class="submission-message">Payment submitted successfully.</p>
+      <p class="error-message"></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Contact us: 19111</p>
+      <button class="report-problem-btn">Report a Problem</button>
+    </div>
+  </footer>
+
+  <script src="Bills.js"></script>
 </body>
 
 </html>

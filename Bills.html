@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="public/playground_assets/logo133-50sg-200h.png" alt="Bank Logo">
+            <img src="public\playground_assets\logo.png" alt="Bank Logo">
         </div>
     </header>
     <nav>
@@ -26,45 +26,44 @@
         <img src="public/playground_assets/gas.png" alt="Gas Bill">
         <button class="show-details-button">Show Details</button>
         <div class="details" id="gas-details">
-          <p class="due-date">Due Date: January 31, 2023</p>
-          <p class="amount">Fees: $50</p>
-          <button onclick="payBill('Gas')">Pay Now</button>
+            <p class="due-date">Due Date: January 31, 2023</p>
+            <p class="amount">Fees: $50</p>
+            <button onclick="payBill('Gas', this)">Pay Now</button>
         </div>
-      </div>
-      
-      <div class="bill-type" data-bill-type="Water">
+    </div>
+
+    <div class="bill-type" data-bill-type="Water">
         <h3>Water Bill</h3>
         <img src="public/playground_assets/water.png" alt="Water Bill">
         <button class="show-details-button">Show Details</button>
         <div class="details" id="water-details">
-          <p class="due-date">Due Date: February 15, 2023</p>
-          <p class="amount">Fees: $35</p>
-          <button onclick="payBill('Water')">Pay Now</button>
+            <p class="due-date">Due Date: February 15, 2023</p>
+            <p class="amount">Fees: $35</p>
+            <button onclick="payBill('Water', this)">Pay Now</button>
         </div>
-      </div>
-      
-      <div class="bill-type" data-bill-type="Electricity">
+    </div>
+
+    <div class="bill-type" data-bill-type="Electricity">
         <h3>Electricity Bill</h3>
         <img src="public/playground_assets/elec.png" alt="Electricity Bill">
         <button class="show-details-button">Show Details</button>
         <div class="details" id="electricity-details">
-          <p class="due-date">Due Date: February 28, 2023</p>
-          <p class="amount">Fees: $75</p>
-          <button onclick="payBill('Electricity')">Pay Now</button>
+            <p class="due-date">Due Date: February 28, 2023</p>
+            <p class="amount">Fees: $75</p>
+            <button onclick="payBill('Electricity', this)">Pay Now</button>
         </div>
-      </div>
-      
-      <div class="bill-type" data-bill-type="Telephone">
+    </div>
+
+    <div class="bill-type" data-bill-type="Telephone">
         <h3>Telephone Bill</h3>
         <img src="public/playground_assets/phone.png" alt="Telephone Bill">
         <button class="show-details-button">Show Details</button>
         <div class="details" id="telephone-details">
-          <p class="due-date">Due Date: March 10, 2023</p>
-          <p class="amount">Fees: $45</p>
-          <button onclick="payBill('Telephone')">Pay Now</button>
+            <p class="due-date">Due Date: March 10, 2023</p>
+            <p class="amount">Fees: $45</p>
+            <button onclick="payBill('Telephone', this)">Pay Now</button>
         </div>
-      </div>
-      
+    </div>
 
     <p class="submission-message">Payment submitted successfully.</p>
 

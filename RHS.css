@@ -2,95 +2,95 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   color: #333;
-  }
-  
-  /* Style the header */
-  header {
+}
+
+/* Style the header */
+header {
   background-color: #063333;
   color: #c7cdbf;
   padding: 10px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  
-  header h1 {
+}
+
+header h1 {
   margin: 0;
   font-size: 28px;
-  }
-  
-  header nav {
+}
+
+header nav {
   margin-top: 10px;
-  }
-  
-  header nav ul {
+}
+
+header nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  }
-  
-  header nav li {
+}
+
+header nav li {
   margin-right: 20px;
-  }
-  
-  header nav li:last-child {
+}
+
+header nav li:last-child {
   margin-right: 0;
-  }
-  
-  header nav a {
+}
+
+header nav a {
   color: #c7cdbf;
   text-decoration: none;
   transition: color 0.3s ease;
-  }
-  
-  header nav a:hover {
+}
+
+header nav a:hover {
   color: #968849;
-  }
-  
-  /* Style the main section */
-  main {
+}
+
+/* Style the main section */
+main {
   margin-top: 80px;
   padding: 30px;
-  }
-  
-  section {
+}
+
+section {
   margin-bottom: 30px;
-  }
-  
-  /* Style the table */
-  table {
+}
+
+/* Style the table */
+table {
   border-collapse: collapse;
   width: 100%;
-  }
-  
-  table th {
+}
+
+table th {
   background-color: #063333;
   color: #c7cdbf;
   font-weight: normal;
   padding: 10px 15px;
   text-align: left;
-  }
-  
-  table td {
+}
+
+table td {
   border: 1px solid #c7cdbf;
   padding: 10px 15px;
-  }
-  
-  /* Style the "Handled" button */
-  button {
+}
+
+/* Style the "Handled" button */
+button {
   background-color: #063333;
   border: none;
   color: #c7cdbf;
   cursor: pointer;
   padding: 8px 12px;
   transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
+}
+
+button:hover {
   background-color: #968849;
-  }
-  
-  /* Style the footer */
-  footer {
+}
+
+/* Style the footer */
+footer {
   background-color: #f9f9f9;
   color: #333;
   padding: 20px;
@@ -98,86 +98,86 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   border-top: 1px solid #e1e1e1;
-  }
-  
-  footer a {
+}
+
+footer a {
   color: #063333;
   text-decoration: none;
   transition: color 0.3s ease;
-  }
-  
-  footer a:hover {
+}
+
+footer a:hover {
   color: #968849;
-  }
-  
-  /* Add responsive design */
-  @media (max-width: 768px) {
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
   header img {
-  max-width: 50%;
+    max-width: 50%;
   }
-  
+
   header nav {
-  position: absolute;
-  top: 80px;
-  right: 0;
-  left: 0;
-  background-color: #063333;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 80px;
+    right: 0;
+    left: 0;
+    background-color: #063333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-  
+
   header nav li {
-  display:block;
-  margin: 10px 0;
+    display: block;
+    margin: 10px 0;
   }
-  
+
   main {
-  margin-top: 140px;
+    margin-top: 140px;
   }
-  }
-  
-  /* Add hover effect to table rows */
-  table tbody tr:hover {
+}
+
+/* Add hover effect to table rows */
+table tbody tr:hover {
   background-color: #c7cdbf;
   cursor: pointer;
-  }
-  
-  /* Style the navigation menu */
-  header nav {
+}
+
+/* Style the navigation menu */
+header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #063333;
   height: 60px;
-  }
-  
-  header nav ul {
+}
+
+header nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  }
-  
-  header nav li {
+}
+
+header nav li {
   margin: 0 10px;
-  }
-  
-  header nav li a {
+}
+
+header nav li a {
   color: #c7cdbf;
   text-decoration: none;
   font-weight: bold;
   padding: 10px 15px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  }
-  
-  header nav li a:hover {
+}
+
+header nav li a:hover {
   background-color: #968849;
   color: #fff;
-  }
-  
-  header nav button {
+}
+
+header nav button {
   background-color: #063333;
   border: none;
   color: #c7cdbf;
@@ -185,14 +185,14 @@ body {
   padding: 10px 15px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  }
-  
-  header nav button:hover {
+}
+
+header nav button:hover {
   background-color: #968849;
-  }
-  
-  /* Style the footer */
-  footer {
+}
+
+/* Style the footer */
+footer {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -204,31 +204,31 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   border-top: 1px solid #e1e1e1;
-  }
-  
-  footer a {
+}
+
+footer a {
   color: #063333;
   text-decoration: none;
   transition: color 0.3s ease;
-  }
-  
-  footer a:hover {
+}
+
+footer a:hover {
   color: #968849;
-  }
-  
-  /* Set height of content */
-  main {
+}
+
+/* Set height of content */
+main {
   min-height: 100vh;
-  }
-  
-  /* Enable scrolling */
-  main {
+}
+
+/* Enable scrolling */
+main {
   overflow-y: auto;
   height: 100%;
-  
-  }
-  
-  /* Disable horizontal scrolling */
-  body {
+
+}
+
+/* Disable horizontal scrolling */
+body {
   overflow-x: hidden;
-  }
+}

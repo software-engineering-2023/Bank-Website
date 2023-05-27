@@ -2,11 +2,17 @@ nav {
     position: sticky;
     margin: auto;
     width: 100%;
-    height: 50 px;
+    height: 50px;
     background: #0b7079;
     /* border-radius: 8px; */
     font-size: 0;
+    top: -50px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1);
+    transition: top 0.3s ease;
+}
+
+nav.show {
+    top: 0;
 }
 
 nav a {
@@ -133,6 +139,10 @@ nav a:nth-child(6):hover~.animation {
     font-size: 16px;
 }
 
+.contactUs:hover {
+    text-decoration: underline;
+}
+
 .button {
     background-color: white;
     color: green;
@@ -147,6 +157,10 @@ nav a:nth-child(6):hover~.animation {
 .findATM {
     color: white;
     padding-right: 25px;
+}
+
+.findATM:hover {
+    text-decoration: underline;
 }
 
 .changingWallpaper {
@@ -189,6 +203,7 @@ nav a:nth-child(6):hover~.animation {
 .goToBar {
     background-color: white;
     width: 100%;
+    position: static;
 }
 
 .myBar {
@@ -308,22 +323,44 @@ html {
 #Awards {
     background-color: white;
     height: 500px;
-    width: 800px;
+    width: 850px;
+    margin: auto;
 }
 
-.awardsContainer{
+.awardsContainer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     padding-top: 30px;
     padding-bottom: 30px;
     /* padding-left: 13%; */
     font-size: 16px;
 }
 
-.award{
+.award {
     width: 300px;
 }
 
-footer{
-    
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    border-top: 1px solid #e1e1e1;
+    height: 0px;
+}
+
+footer a {
+    color: #063333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #968849;
 }

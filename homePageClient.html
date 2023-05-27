@@ -16,20 +16,36 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- JS -->
+    <script>
+        var prevScrollPos = window.pageYOffset;
+
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+
+            if (prevScrollPos > currentScrollPos) {
+                document.querySelector("nav").classList.add("show");
+            } else {
+                document.querySelector("nav").classList.remove("show");
+            }
+
+            prevScrollPos = currentScrollPos;
+        };
+
+    </script>
 </head>
 
 <body>
 
     <div class="backGroundForTheLogo">
         <div class="left-section">
-            <img src="public/playground_assets/logo133-50sg-200h.png" alt="logo" id="img1" class="logo">
+            <img src="public\playground_assets\logo.png" alt="logo" id="img1" class="logo">
         </div>
         <div class="right-section">
 
             <img src="public\playground_assets\marker.png" class="fa fa-phone">
-            <span class="findATM">Branch & ATM Finder</span>
+            <a href="atmFinder.html" style="text-decoration: none;"><span class="findATM">Branch & ATM Finder</span></a>
             <img src="public/playground_assets/phoneSymbol.png" class="fa fa-phone">
-            <span class="contactUs">Contact Us</span>
+            <a href="ContactUs" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
             <button class="button" onclick="">Login</button>
         </div>
     </div>
@@ -39,8 +55,6 @@
         <a href="Aboutus.html">About Us</a>
         <a href="Radio&OptimizationPage.html">Radio</a>
         <a href="TransmissionPage.html">Transmission</a>
-        <a href="SupplysPage.html">Supply</a>
-        <a href="RefrencePage.html">Refrence</a>
         <div class="animation start-home animation"></div>
     </nav>
 
@@ -136,7 +150,7 @@
         </center>
         <div class="imagesDiv">
             <div class="imagesForBlogs">
-                <img src="public\playground_assets\money.jpg" alt="Image">
+                <img src="public\playground_assets\money.jpg" alt="Image" style="width: 100%;">
                 <div class="overlay">
                     <p class="text" style="font-size: 25px;padding-top: 40px;padding-left: 20px;">How to build your net
                         worth</p>
@@ -150,7 +164,7 @@
                 </div>
             </div>
             <div class="imagesForBlogs">
-                <img src="public\playground_assets\guyWritingHisBills.jpg">
+                <img src="public\playground_assets\guyWritingHisBills.jpg" style="width: 100%;">
                 <div class="overlay">
                     <p class="text" style="font-size: 30px;padding-top: 40px;padding-left: 20px;">How to manage your
                         bills</p>
@@ -164,7 +178,7 @@
                 </div>
             </div>
             <div class="imagesForBlogs">
-                <img src="public\playground_assets\calculatingTaxes.jpg">
+                <img src="public\playground_assets\calculatingTaxes.jpg" style="width: 100%;">
                 <div class="overlay1">
                     <p class="text" style="font-size: 30px;padding-top: 40px;padding-left: 20px;">How to manage Your
                         finances</p>
@@ -180,7 +194,7 @@
         </div>
     </section>
 
-    <section href="#Awards">
+    <section id="Awards">
         <center style="padding-top: 40px;">AWARDS</center>
         <center>
             <h1 style="font-size:40px;color: rgb(72, 128, 72);">Cilveki's integrity and quality are recognized
@@ -197,12 +211,13 @@
             </div>
             <div class="award">
                 <span class="material-symbols-outlined" style="padding-left:45%">currency_exchange</span>
-                <p style="font-size:20px;font-weight: bolder;">Best Foreign Exchange Provider in Egypt</p>
+                <p style="font-size:20px;font-weight: bolder;text-align: center;">Best Foreign Exchange Provider in Egypt</p>
             </div>
         </div>
     </section>
+    <div class="footer-container">
+        <p style="text-align: right;font-size: 15px;">&copy; 2023 Celviki Inc. All rights reserved.</p>
+    </div>
 </body>
-<footer>
-    
-</footer>
+
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Banker Report Handling Page</title>
+	<link rel="stylesheet" href="RHS.css">
+</head>
+<body>
+	<header>
+		<img src="public\playground_assets\logo.png" alt="logo">
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Reports</a></li>
+				<li><a href="#">Customers</a></li>
+				<li><a href="#">Settings</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h2>Customer Reports</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Report ID</th>
+						<th>Customer Name</th>
+						<th>Report Type</th>
+						<th>Date Submitted</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<script>
+						// Generate random number of reports between 3 and 10
+						const numReports = Math.floor(Math.random() *8) + 3;
+
+						// Array of possible report types
+						const reportTypes = ["Account Inquiry", "Transaction Dispute", "Loan Application"];
+
+						// Array of possible customer names
+						const customerNames = ["John Doe", "Jane Smith", "Bob Johnson", "Alice Lee", "Michael Chen", "Emily Davis", "David Kim", "Samantha Brown", "Tom Wilson", "Olivia Rodriguez"];
+
+						// Generate table rows with random report data
+						for (let i = 1; i <= numReports; i++) {
+							const reportId = ("000" + i).slice(-3);
+							const customerName = customerNames[Math.floor(Math.random() * customerNames.length)];
+							const reportType = reportTypes[Math.floor(Math.random() * reportTypes.length)];
+							const dateSubmitted = new Date(new Date() - Math.floor(Math.random() * 1000000000)).toLocaleDateString();
+							const status = Math.random() < 0.5 ? "Pending" : "In Progress";
+							const row = `
+								<tr>
+									<td>${reportId}</td>
+									<td>${customerName}</td>
+									<td>${reportType}</td>
+									<td>${dateSubmitted}</td>
+									<td>${status}</td>
+									<td><button onclick="removeReport(this)">Handled</button></td>
+								</tr>
+							`;
+							document.querySelector("tbody").insertAdjacentHTML("beforeend", row);
+						}
+					</script>
+				</tbody>
+			</table>
+            <footer>
+                <div class="footer-container">
+                  <p>&copy; 2023 Celviki Inc. All rights reserved.</p>
+                  <nav>
+                    <ul>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </footer>
+		</main>
+	<script>
+		function removeReport(button) {
+			var row = button.parentNode.parentNode;
+			row.parentNode.removeChild(row);
+			var table = document.querySelector("table");
+			if (!table.tBodies[0].hasChildNodes()) {
+				table.parentNode.removeChild(table);
+			}
+		}
+	</script>
+</body>
+</html>

@@ -154,6 +154,12 @@ nav a:nth-child(6):hover~.animation {
     font-family: 'Rajdhani', sans-serif;
 }
 
+.button:hover {
+    background-color: #1abc9c;
+    color: white;
+    border: 1px solid #1abc9c;
+}
+
 .findATM {
     color: white;
     padding-right: 25px;
@@ -168,16 +174,18 @@ nav a:nth-child(6):hover~.animation {
     width: 90%;
     top: 50%;
     left: 50%;
-    margin-top: 100px;
+    margin-top: 300px;
 }
 
 .miniContainer{
     display: flex;
     justify-content: space-between;
+    height: 250px;
+    margin-top: 10%;
 }
 
 form{
     border-radius: 10px;
-    border-style: solid;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
     width: 45%;
 }

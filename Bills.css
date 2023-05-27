@@ -136,7 +136,8 @@ nav a:nth-child(6):hover~.animation {
 }
 
 .details p strong {
-  color: white; /* Change the color of the strong element to white */
+  color: white;
+  /* Change the color of the strong element to white */
 }
 
 button {
@@ -155,4 +156,26 @@ button {
   background-color: rgba(4, 49, 54, 255);
   color: white;
   margin: 20px;
+}
+
+.footer {
+  background-color: rgba(4, 49, 54, 255);
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
 }

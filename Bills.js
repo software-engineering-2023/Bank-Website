@@ -1,4 +1,4 @@
-var creditCardBalance = 200;
+var accountBalance = 200;
 
 // Helper function to toggle visibility of an element
 function toggleVisibility(elementId) {
@@ -17,29 +17,75 @@ function handleShowDetailsClick(event) {
 }
 
 // Event handler for Pay Now button
-function handlePayNowClick(event) {
-  var button = event.target;
-  var billType = button.parentNode.getAttribute("data-bill-type");
-  var feesElement = button.parentNode.querySelector(".fees");
-  var submissionMessage = button.parentNode.querySelector(".submission-message");
-  var errorMessage = button.parentNode.querySelector(".error-message");
+function handlePayNowClick(billType, feesElement, fullPaymentButton, partialPaymentButton) {
+  var submissionMessage = feesElement.parentNode.querySelector(".submission-message");
+  var errorMessage = feesElement.parentNode.querySelector(".error-message");
 
-  var fees = parseFloat(feesElement.textContent.replace("Fees: $", ""));
-  if (creditCardBalance >= fees) {
-    creditCardBalance -= fees;
-    feesElement.textContent = "Fees: Paid";
+  var fees = parseFloat(feesElement.textContent.replace("$", ""));
+  var remainingBalance = accountBalance - fees;
+
+  // Check if the bill has already been paid in full
+  if (feesElement.textContent.includes("Paid")) {
+    submissionMessage.textContent = "This bill has already been paid in full.";
     submissionMessage.style.display = "block";
-    errorMessage.textContent = "";
-  } else {
-    errorMessage.textContent = "Error: Insufficient balance to pay the bill.";
-    submissionMessage.style.display = "none";
+    return;
   }
 
-  button.disabled = true;
-  button.textContent = "Paid";
+  // Check if the account balance is sufficient for full payment
+  if (remainingBalance >= 0) {
+    // Update fees to "Paid"
+    feesElement.textContent = "Fees: Paid";
+    submissionMessage.textContent = "Payment submitted successfully.";
+    submissionMessage.style.display = "block";
 
-  var creditCardBalanceElement = document.querySelector(".credit-card-balance h3");
-  creditCardBalanceElement.textContent = "Credit Card Balance: $" + creditCardBalance;
+    // Disable the Pay Now buttons
+    fullPaymentButton.disabled = true;
+    partialPaymentButton.disabled = true;
+
+    // Update account balance on the page
+    var accountBalanceElement = document.querySelector(".credit-card-balance h3");
+    accountBalanceElement.textContent = "Account Balance: $" + remainingBalance;
+  } else {
+    errorMessage.textContent = "Error: Insufficient balance to pay the bill.";
+    errorMessage.style.display = "block";
+  }
+}
+
+// Event handler for Partial Payment button
+function handlePartialPaymentClick(feesElement, partialPaymentInput) {
+  var errorMessage = feesElement.parentNode.querySelector(".error-message");
+
+  var fees = parseFloat(feesElement.textContent.replace("$", ""));
+  var partialPayment = parseFloat(partialPaymentInput.value);
+  var remainingBalance = accountBalance - fees;
+
+  // Check if the bill has already been paid in full
+  if (feesElement.textContent.includes("Paid")) {
+    errorMessage.textContent = "This bill has already been paid in full.";
+    errorMessage.style.display = "block";
+    return;
+  }
+
+  // Check if the partial payment amount is valid
+  if (partialPayment > remainingBalance || partialPayment > fees || partialPayment <= 0 || isNaN(partialPayment)) {
+    errorMessage.textContent = "Error: Invalid partial payment amount.";
+    errorMessage.style.display = "block";
+    return;
+  }
+
+  // Update fees and account balance
+  feesElement.textContent = "Fees: $" + (fees - partialPayment).toFixed(2);
+  accountBalance -= partialPayment;
+
+  // Clear the partial payment input field
+  partialPaymentInput.value = "";
+
+  // Hide the error message
+  errorMessage.style.display = "none";
+
+  // Update account balance on the page
+  var accountBalanceElement = document.querySelector(".credit-card-balance h3");
+  accountBalanceElement.textContent = "Account Balance: $" + accountBalance;
 }
 
 // Attach event listeners to Show Details buttons
@@ -48,12 +94,22 @@ Array.from(showDetailsButtons).forEach(function(button) {
   button.addEventListener("click", handleShowDetailsClick);
 });
 
-// Attach event listener to Pay Now buttons
-var payNowButtons = document.querySelectorAll(".bill-type button");
+// Attach event listeners to Pay Now buttons
+var payNowButtons = document.querySelectorAll(".pay-now-button");
 Array.from(payNowButtons).forEach(function(button) {
-  if (button.textContent === "Pay Now") {
-    button.addEventListener("click", handlePayNowClick);
-  }
+  var billType = button.parentNode.parentNode.getAttribute("data-bill-type");
+  var feesElement = button.parentNode.querySelector(".fees");
+  var fullPaymentButton = button.parentNode.querySelector(".full-payment-button");
+  var partialPaymentButton = button.parentNode.querySelector(".partial-payment-button");
+
+  fullPaymentButton.addEventListener("click", function() {
+    handlePayNowClick(billType, feesElement, fullPaymentButton, partialPaymentButton);
+  });
+
+  partialPaymentButton.addEventListener("click", function() {
+    var partialPaymentInput = button.parentNode.querySelector(".partial-payment-input");
+    handlePartialPaymentClick(feesElement, partialPaymentInput);
+  });
 });
 
 // Hide details initially

@@ -1,3 +1,6 @@
+html{
+  height: 5000px;
+}
 #hoverup {
   width: 45%;
   font-size: 30px;
@@ -153,4 +156,20 @@ button{
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.footer {
+  background-color: #0b7079;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }

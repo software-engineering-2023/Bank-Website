@@ -1,100 +1,89 @@
-/* Reset styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Global styles */
-  body {
-    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    background-image: url(public/playground_assets/Card-removebg-preview.png);
-    background-position: 50cqmax 10cqmax;
-    background-size: 50%;
-    background-repeat: no-repeat;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(45deg, #FFC107, #FF4081, #3F51B5);
+}
 
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .left-section {
-    flex: 0 0 40%;
-  }
-  
-  .left-section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .advantage {
-    margin-bottom: 20px;
-  }
-  
-  .advantage h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .advantage p {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .center-section {
-    flex: 0 0 60%;
-    text-align: bottom;
-  }
-  
-  .center-section h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-  
-  .center-section p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  /* Application form styles */
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 18px;
-  }
-  
-  .form-group input[type="text"],
-  .form-group input[type="email"],
-  .form-group input[type="tel"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  button[type="submit"].btn {
-    display: inline-block;
-    background-color: #1abc9c;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 4px;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  button[type="submit"].btn:hover {
-    background-color: #16a085;
-  }
-  
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.card-types {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.card-type {
+  flex-basis: 30%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-type h2 {
+  margin-top: 0;
+}
+
+.card-type img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+ul {
+  padding: 0;
+  margin: 10px 0;
+}
+
+ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+form {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 30px;
+  background-color: rgb(5, 32, 23);
+  color: #fff;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}

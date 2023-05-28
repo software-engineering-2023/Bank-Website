@@ -5,109 +5,108 @@ body {
   padding: 0;
 }
 
-header {
-  background-color: rgba(4, 49, 54, 255);
-  padding: 20px;
-  color: #ffffff;
+#hoverup {
+  width: 45%;
+  font-size: 30px;
+  font-family: 'Rajdhani', sans-serif;
+}
 
+.backGroundForTheLogo {
+  background-color: rgba(4, 49, 54, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
   width: 150px;
   height: 70px;
-
 }
 
-nav {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  background: #0b7079;
-  font-size: 0;
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1);
+.fa-phone {
+  width: 15px;
+  margin-left: 10px;
+  padding-right: 5px;
 }
 
-nav a {
-  font-size: 15px;
-  text-transform: uppercase;
+.right-section {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.contactUs {
   color: white;
-  text-decoration: none;
-  line-height: 50px;
-  position: relative;
-  z-index: 1;
-  display: inline-block;
+  margin-right: 40px;
+  font-size: 16px;
+}
+
+.contactUs:hover {
+  text-decoration: underline;
+}
+
+.button {
+  background-color: white;
+  color: green;
+  border-radius: 2px;
+  width: 160px;
+  height: 50px;
   text-align: center;
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
 }
 
-nav .animation {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  z-index: 0;
+.button:hover {
   background-color: #1abc9c;
-  border-radius: 8px;
-  transition: all .5s ease 0s;
+  color: white;
+  border: 1px solid #1abc9c;
 }
 
-nav .start-home,
-a:nth-child(1):hover~.animation {
-  width: 110px;
-  left: 0px;
+.findATM {
+  color: white;
+  padding-right: 25px;
 }
 
-nav a:nth-child(1) {
-  width: 100px;
+.findATM:hover {
+  text-decoration: underline;
+}
+nav {
+  background-color: #0b7079;
+  height: 50px;
 }
 
-nav a:nth-child(1):hover~.animation {
-  width: 100px;
-  left: 0px;
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-nav a:nth-child(2) {
-  width: 110px;
+nav ul li {
+  margin: 0 10px;
 }
 
-nav a:nth-child(2):hover~.animation {
-  width: 110px;
-  left: 100px;
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-nav a:nth-child(3) {
-  width: 100px;
-}
-
-nav a:nth-child(3):hover~.animation {
-  width: 100px;
-  left: 210px;
-}
-
-nav a:nth-child(4) {
-  width: 160px;
-}
-
-nav a:nth-child(4):hover~.animation {
-  width: 160px;
-  left: 310px;
-}
-
-nav a:nth-child(5) {
-  width: 120px;
-}
-
-nav a:nth-child(5):hover~.animation {
-  width: 120px;
-  left: 470px;
-}
-
-nav a:nth-child(6) {
-  width: 120px;
-}
-
-nav a:nth-child(6):hover~.animation {
-  width: 120px;
-  left: 590px;
+nav ul li a:hover {
+  background-color: #1abc9c;
 }
 header h1 {
   margin: 0;

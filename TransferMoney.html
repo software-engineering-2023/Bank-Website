@@ -4,15 +4,24 @@
     <link rel="stylesheet" href="TransferMoney.css">
     <title>Online Banking - Money Transfer</title>
     <script>
-      function checkBalance() {
-        var balance = parseFloat(document.getElementById("balance").textContent);
-        var amount = parseFloat(document.getElementById("amount").value);
-        if (amount > balance) {
-          alert("Insufficient funds! Your current balance is " + balance + ".");
-          return false;
-        }
-        return true;
-      }
+     function checkBalance(event) {
+  event.preventDefault();
+  var balance = parseFloat(document.getElementById("balance").textContent);
+  var amount = parseFloat(document.getElementById("amount").value);
+  if (amount > balance) {
+    alert("Insufficient funds! Your current balance is " + balance + ".");
+    return;
+  }
+  balance -= amount;
+  document.getElementById("balance").textContent = balance.toFixed(2);
+
+  // show success message
+  var successMessage = document.getElementById("success-message");
+  successMessage.style.display = "block";
+  setTimeout(function() {
+    successMessage.style.display = "none";
+  }, 3000);
+}
     </script>
   </head>
 
@@ -40,9 +49,12 @@
       </nav>
     <h1>Transfer Money</h1>
     <p>Current Balance: $<span id="balance">1000.00</span></p>
-    <form action="transfer.php" method="post" onsubmit="return checkBalance()">
-      <label for="from_account">From Account:</label>
-      <input type="text" id="from_account" name="from_account" required><br><br>
+    <form action="transfer.php" method="post" onsubmit="">
+        <label for="from_account">From Account:</label>
+        <select id="from_account" name="from_account">
+          <option value="account1">Account 1</option>
+          <option value="account2">Account 2</option>
+        </select><br><br>
       <label for="to_account">To Account:</label>
       <input type="text" id="to_account" name="to_account" required><br><br>
       <label for="amount">Amount:</label>

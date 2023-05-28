@@ -120,6 +120,8 @@ nav a:nth-child(6):hover~.animation {
 
 .bill-type h3 {
   color: rgba(4, 49, 54, 255);
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
 .bill-type img {
@@ -185,27 +187,17 @@ button {
   text-align: center;
 }
 
-.bill-type {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.bill-type h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.bill-type img {
-  width: 100px;
-  height: auto;
-}
-
 .show-details-button {
   margin-bottom: 10px;
 }
 
-.details {
-  margin-top: 10px;
+.partial-payment-input {
+  display: none;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: red;
 }
 
 .submission-message {
@@ -213,16 +205,18 @@ button {
   color: green;
 }
 
-.error-message {
-  color: red;
-}
-
 .full-payment-button,
 .partial-payment-button {
-  margin-right: 10px;
+  background-color: rgba(4, 49, 54, 255);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .partial-payment-input {
   display: none;
   margin-bottom: 10px;
 }
+

@@ -41,7 +41,7 @@
 .desktop1-rectangle2 {
   top: 264px;
   left: 795px;
-  width: 289px;
+  width: 283px;
   height: 39px;
   position: absolute;
 }
@@ -53,8 +53,7 @@
   position: absolute;
 }
 .desktop1-text {
-  /* top: 316px; */
-  top: 342px;
+  top: 316px;
   left: 796px;
   color: rgba(69, 106, 161, 1);
   width: 68px;
@@ -70,8 +69,7 @@
   text-decoration: none;
 }
 .desktop1-text2 {
-  /* top: 342px; */
-  top: 368px;
+  top: 342px;
   left: 796px;
   color: rgba(69, 106, 161, 1);
   width: 98px;
@@ -87,7 +85,7 @@
   text-decoration: none;
 }
 .desktop1-text4 {
-  top: 342px;
+  top: 316px;
   left: 950px;
   color: rgba(69, 106, 161, 1);
   width: 134px;
@@ -161,30 +159,6 @@
   font-size: 12px;
   font-style: Regular;
   text-align: left;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-input{
-  text-align: center;
-}
-
-.desktop1-text00{
-  top: 316px;
-  left: 63%;
-  position: sticky;
-  color: white;
-  background-color: rgba(69, 106, 161, 1);
-  background-size: cover;
-  width: 289px;
-  height: 20px;
-  position: absolute;
-  font-size: 12px;
-  font-style: Regular;
-  text-align: center;
   font-family: Inter;
   font-weight: 400;
   line-height: normal;

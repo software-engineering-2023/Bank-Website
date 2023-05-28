@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>View Credit Card Points and Redeem for Cashback</title>
+  <link rel="stylesheet" href="view_points.css">
+  <script>
+    // JavaScript code for the View Credit Card Points and Redeem for Cashback page
+
+    // Sample data for demonstration
+    var totalPoints = 5000;
+    var cashbackRate = 0.01;
+    var cashbackAmount = totalPoints * cashbackRate;
+
+    // Update points and cashback amount on the page
+    function updatePointsAndCashback() {
+      document.getElementById("total-points").textContent = totalPoints;
+      document.getElementById("cashback-amount").textContent = cashbackAmount.toFixed(2);
+    }
+
+    // Redeem points and update cashback amount
+    function redeemPoints() {
+      // Perform the redemption logic here
+      cashbackAmount = 0; // Set the cashback amount to zero after redemption
+      updatePointsAndCashback(); // Update the points and cashback on the page
+    }
+
+    // Initial update of points and cashback on page load
+    window.addEventListener("DOMContentLoaded", function () {
+      updatePointsAndCashback();
+      document.getElementById("redeem-button").addEventListener("click", redeemPoints);
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>View Credit Card Points and Redeem for Cashback</h1>
+
+    <div id="points-container">
+      <p>Total Points: <span id="total-points">0</span></p>
+      <p>Cashback Amount: $<span id="cashback-amount">0.00</span></p>
+    </div>
+
+    <button id="redeem-button">Redeem Points</button>
+  </div>
+</body>
+
+</html>

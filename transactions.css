@@ -271,6 +271,68 @@ nav {
   animation-duration: 0.3s;
 }
 
+.notification-nav {
+  margin-bottom: 10px;
+}
+
+.notification-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-nav li {
+  display: inline-block;
+}
+
+.notification-nav a {
+  display: block;
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.notification-nav a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.notification-section {
+  margin-bottom: 20px;
+}
+
+.notification-section h3 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.notification-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.notification-group label {
+  margin-left: 5px;
+}
+
+.notification-checkbox {
+  margin-right: 10px;
+}
+
+#mark-read-btn {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#mark-read-btn:hover {
+  background-color: #003366;
+}
 
 .close {
   color: #aaa;
@@ -362,5 +424,3 @@ nav {
 .input:disabled {
   opacity: 0.5;
 }
-
-  

@@ -33,34 +33,25 @@
     <div class="popup-content">
       <span class="close">&times;</span>
       <h2>Notifications</h2>
-      <form class="form">
-        <div class="notification-group">
-          <input type="checkbox" id="gas" name="gas" class="notification-checkbox">
-          <label for="gas"></label>
+      <nav class="notification-nav">
+        <ul>
+          <li><a href="#" class="active" data-tab="unread">Unread</a></li>
+          <li><a href="#" data-tab="read">Read</a></li>
+        </ul>
+      </nav>
+      <div class="notification-section" id="unread-section">
+        <h3>Unread Notifications</h3>
+        <div class="notification-list">
+          <!-- Unread notifications will be dynamically populated here -->
         </div>
-        <div class="notification-group">
-          <input type="checkbox" id="electricity" name="electricity" class="notification-checkbox">
-          <label for="electricity"></label>
+        <button id="mark-read-btn">Mark as Read</button>
+      </div>
+      <div class="notification-section" id="read-section" style="display: none;">
+        <h3>Read Notifications</h3>
+        <div class="notification-list">
+          <!-- Read notifications will be dynamically populated here -->
         </div>
-        <div class="notification-group">
-          <input type="checkbox" id="water" name="water" class="notification-checkbox">
-          <label for="water"></label>
-        </div>
-        <div class="notification-group">
-          <input type="checkbox" id="telephone" name="telephone" class="notification-checkbox">
-          <label for="telephone"></label>
-        </div>
-        <div class="notification-group">
-          <input type="checkbox" id="loans" name="loans" class="notification-checkbox">
-          <label for="loans"></label>
-        </div>
-        <div class="notification-group">
-          <input type="checkbox" id="credit-card" name="credit-card" class="notification-checkbox">
-          <label for="credit-card"></label>
-        </div>
-        <input type="submit" value="Save" class="input">
-      </form>
-      <p id="success-message" style="display:none;">Notifications saved successfully!</p>
+      </div>
     </div>
   </div>
   

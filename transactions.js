@@ -94,30 +94,69 @@ window.onclick = function(event) {
 
 
 // dummy data
-// Update checkbox labels with reminder message including dummy dates
-var dummyDates = {
-  gas: "June 1, 2023",
-  electricity: "June 5, 2023",
-  water: "June 10, 2023",
-  telephone: "June 15, 2023",
-  loans: "June 20, 2023",
-  "credit-card": "June 25, 2023"
-};
+// Get the notification sections
+var unreadSection = document.getElementById("unread-section");
+var readSection = document.getElementById("read-section");
 
-var checkboxGas = document.getElementById("gas");
-checkboxGas.nextElementSibling.textContent = "Reminder: You have a gas bill to pay due (" + dummyDates.gas + ")";
+// Get the "Mark as Read" button
+var markReadBtn = document.getElementById("mark-read-btn");
 
-var checkboxElectricity = document.getElementById("electricity");
-checkboxElectricity.nextElementSibling.textContent = "Reminder: You have an electricity bill to pay due (" + dummyDates.electricity + ")";
+// Add event listener to the "Mark as Read" button
+markReadBtn.addEventListener("click", function() {
+  // Get all checked notification checkboxes in the unread section
+  var checkboxes = unreadSection.querySelectorAll(".notification-checkbox:checked");
 
-var checkboxWater = document.getElementById("water");
-checkboxWater.nextElementSibling.textContent = "Reminder: You have a water bill to pay due (" + dummyDates.water + ")";
+  // Move checked notifications to the read section
+  checkboxes.forEach(function(checkbox) {
+    var notification = checkbox.parentNode;
+    readSection.querySelector(".notification-list").appendChild(notification);
+  });
+});
 
-var checkboxTelephone = document.getElementById("telephone");
-checkboxTelephone.nextElementSibling.textContent = "Reminder: You have a telephone bill to pay due (" + dummyDates.telephone + ")";
+// Update the active tab when clicking on the notification nav links
+var notificationNavLinks = document.querySelectorAll(".notification-nav a");
 
-var checkboxLoans = document.getElementById("loans");
-checkboxLoans.nextElementSibling.textContent = "Reminder: You have a loan payment due (" + dummyDates.loans + ")";
+notificationNavLinks.forEach(function(link) {
+  link.addEventListener("click", function(event) {
+    event.preventDefault();
+    var tab = link.getAttribute("data-tab");
 
-var checkboxCreditCard = document.getElementById("credit-card");
-checkboxCreditCard.nextElementSibling.textContent = "Reminder: You have a credit card bill to pay due (" + dummyDates["credit-card"] + ")";
+    // Show the selected section and hide the other section
+    if (tab === "unread") {
+      unreadSection.style.display = "block";
+      readSection.style.display = "none";
+    } else if (tab === "read") {
+      unreadSection.style.display = "none";
+      readSection.style.display = "block";
+    }
+
+    // Update the active class for the navigation links
+    notificationNavLinks.forEach(function(navLink) {
+      navLink.classList.remove("active");
+    });
+    link.classList.add("active");
+  });
+});
+
+// Generate dummy notifications
+var notificationsData = [
+  { type: "bill", title: "Gas Bill", dueDate: "2023-06-10" },
+  { type: "bill", title: "Electricity Bill", dueDate: "2023-06-15" },
+  { type: "bill", title: "Water Bill", dueDate: "2023-06-20" },
+  { type: "bill", title: "Telephone Bill", dueDate: "2023-06-25" },
+  { type: "payment", title: "Loan Payment Reminder", dueDate: "2023-06-30" },
+  { type: "payment", title: "Credit Card Bill Reminder", dueDate: "2023-07-05" }
+];
+
+var unreadNotificationList = unreadSection.querySelector(".notification-list");
+
+notificationsData.forEach(function(notification) {
+  var notificationItem = document.createElement("div");
+  notificationItem.className = "notification-item";
+  notificationItem.innerHTML = `
+    <input type="checkbox" class="notification-checkbox">
+    <span class="notification-title">${notification.title}</span>
+    <span class="notification-due">Reminder: You have a ${notification.type === "bill" ? "bill" : "payment"} due on ${notification.dueDate}</span>
+  `;
+  unreadNotificationList.appendChild(notificationItem);
+});

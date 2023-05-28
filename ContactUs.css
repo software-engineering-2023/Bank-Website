@@ -175,6 +175,8 @@ nav a:nth-child(6):hover~.animation {
     top: 50%;
     left: 50%;
     margin-top: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 .miniContainer{
@@ -189,5 +191,11 @@ form{
     border-radius: 10px;
     box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
     width: 45%;
+    height: 100%;
 }
 
+.visitUs{
+    position: absolute;
+    width: 100%;
+    margin-top: 50px;
+}

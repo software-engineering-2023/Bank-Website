@@ -1,260 +1,221 @@
-header {
-  background-color: #063333;
-  color: #c7cdbf;
-  padding: 10px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+#hoverup {
+  width: 45%;
+  font-size: 30px;
+  font-family: 'Rajdhani', sans-serif;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 28px;
-}
-
-header nav {
-  margin-top: 10px;
-}
-
-header nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.backGroundForTheLogo {
+  background-color: rgba(4, 49, 54, 255);
   display: flex;
-}
-
-header nav li {
-  margin-right: 20px;
-}
-
-header nav li:last-child {
-  margin-right: 0;
-}
-
-header nav a {
-  color: #c7cdbf;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-header nav a:hover {
-  color: #968849;
-}
-
-/* Style the main section */
-main {
-  margin-top: 80px;
-  padding: 30px;
-}
-footer {
-  background-color: #f9f9f9;
-  color: #333;
-  padding: 20px;
-  text-align: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  border-top: 1px solid #e1e1e1;
-}
-
-footer a {
-  color: #063333;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #968849;
-}
-
-/* Add responsive design */
-@media (max-width: 768px) {
-  header img {
-    max-width: 50%;
-  }
-
-  header nav {
-    position: absolute;
-    top: 80px;
-    right: 0;
-    left: 0;
-    background-color: #063333;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  header nav li {
-    display: block;
-    margin: 10px 0;
-  }
-
-  main {
-    margin-top: 140px;
-  }
-}
-header nav {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #063333;
-  height: 60px;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
-header nav ul {
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+  height: 70px;
+}
+
+.fa-phone {
+  width: 15px;
+  margin-left: 10px;
+  padding-right: 5px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.contactUs {
+  color: white;
+  margin-right: 40px;
+  font-size: 16px;
+}
+
+.contactUs:hover {
+  text-decoration: underline;
+}
+
+.button {
+  background-color: white;
+  color: green;
+  border-radius: 2px;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.button:hover {
+  background-color: #1abc9c;
+  color: white;
+  border: 1px solid #1abc9c;
+}
+
+.findATM {
+  color: white;
+  padding-right: 25px;
+}
+
+.findATM:hover {
+  text-decoration: underline;
+}nav {
+  background-color: #0b7079;
+  height: 50px;
+}
+
+nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-header nav li {
+nav ul li {
   margin: 0 10px;
 }
 
-header nav li a {
-  color: #c7cdbf;
+nav ul li a {
   text-decoration: none;
-  font-weight: bold;
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: uppercase;
   padding: 10px 15px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
-header nav li a:hover {
-  background-color: #968849;
-  color: #fff;
+nav ul li a:hover {
+  background-color: #1abc9c;
 }
-
-header nav button {
-  background-color: #063333;
-  border: none;
-  color: #c7cdbf;
-  cursor: pointer;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-header nav button:hover {
-  background-color: #968849;
-}
-
-/* Style the footer */
 footer {
+  background-color: #0b7079;
+  color: #ffffff;
+  text-align: center;
+  padding: 0px;
   position: fixed;
   bottom: 0;
+  width: 100%;
   left: 0;
-  width: 100%;
-  background-color: #f9f9f9;
-  color: #333;
-  padding: 20px;
-  text-align: center;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  border-top: 1px solid #e1e1e1;
+
 }
 
-footer a {
-  color: #063333;
+.footer a {
+  color: #ffffff;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
-footer a:hover {
-  color: #968849;
+.footer a:hover {
+  text-decoration: underline;
 }
 
-/* Set height of content */
-main {
-  min-height: 100vh;
+
+
+
+
+
+/* Container for the form */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-/* Enable scrolling */
-main {
-  overflow-y: auto;
-  height: 100%;
-
+/* Left side of the form */
+.left {
+  width: 400px;
+  padding: 40px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Disable horizontal scrolling */
-body {
-  overflow-x: hidden;
-}
-.image-container {
-  position: relative;
+/* Form header */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.input-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.input-container label {
+/* Form labels */
+label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-.input-container input {
+/* Form input fields */
+.form-field {
   display: block;
   width: 100%;
-  padding: 10px 15px;
+  padding: 10px;
   margin-bottom: 20px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  font-size: 16px;
 }
 
-.input-container button {
+/* Form error messages */
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+/* Form submit button */
+button[type="submit"] {
   display: block;
+  width: 100%;
+  padding: 10px;
   margin-top: 20px;
-  padding: 10px 15px;
-  background-color: #063333;
-  color: #fff;
+  background-color: #0b7079;
+  color: white;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-.input-container button:hover {
-  background-color: #968849;
+button[type="submit"]:hover {
+  background-color: #0b7079;
 }
 
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.5); 
+/* Form footer */
+p {
+  margin-top: 20px;
+  text-align: center;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Form link */
+a {
+  color: #4CAF50;
+  text-decoration: none;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-button[type="submit"] {
-  margin: 10px 0;
+a:hover {
+  text-decoration: underline;
 }
 
-button[type="submit"] {
-  width: 100%;
+.limited-scroll {
+  height: 300px; /* Set the height of the section to limit the scrolling */
+  overflow-y: scroll; /* Add vertical scrolling */
 }
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    margin: 0 auto;
-  }
+.backGroundForTheLogo {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }

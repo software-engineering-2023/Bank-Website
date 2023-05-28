@@ -161,25 +161,19 @@ button {
 }
 
 .footer {
-  background-color: rgba(4, 49, 54, 255);
-  color: white;
+  background-color: #0b7079;
+  color: #ffffff;
+  text-align: center;
   padding: 20px;
-  margin-top: 20px;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer p {
-  margin: 0;
 }
 
 .footer a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 .credit-card-balance {

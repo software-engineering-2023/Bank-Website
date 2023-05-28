@@ -4,65 +4,79 @@
 	<title>R=<img src="public\playground_assets\logo.png" alt="logo"></title>
     <link rel="stylesheet" href="Register.css">
 
-	<style>
-		/* Position the container in front of the image */
-		.container {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			z-index: 1;
-		}
-
-		/* Set the image as the background */
-		main {
-			background-image: url("public\playground_assets\home.jpg");
-			background-repeat: no-repeat;
-			background-size: cover;
-			height: 100vh;
-			position: relative;
-		}
-	</style>
+	
 </head>
 <body>
-	<header>
-		<img src="public\playground_assets\logo.png" alt="logo">
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Reports</a></li>
-				<li><a href="#">Customers</a></li>
-				<li><a href="#">Settings</a></li>
-			</ul>
-		</nav>
-	</header>
-
-	<main>
-		<div class="container">
-			<form>
-				<label for="first-name">First Name:</label>
-				<input type="text" id="first-name" name="first-name" required><br>
-
-				<label for="last-name">Last Name:</label>
-				<input type="text" id="last-name" name="last-name" required><br>
-
-				<label for="account-number">Account Number:</label>
-				<input type="text" id="account-number" name="account-number" required><br>
-
-				<label for="password">Password:</label>
-				<input type="password" id="password" name="password" required><br>
-
-				<label for="confirm-password">Confirm Password:</label>
-				<input type="password" id="confirm-password" name="confirm-password" required><br>
-
-				<input type="submit" value="Register">
-			</form>
+	<div class="backGroundForTheLogo">
+		<div class="left-section">
+		  <img src="public\playground_assets\logo.png" alt="logo" id="img1" class="logo">
 		</div>
-	</main>
-
-	<footer>
-		<p>&copy; 2023 Celviki.inc All rights reserved.</p>
-	</footer>
+		<div class="right-section">
+	
+		  <img src="public\playground_assets\marker.png" class="fa fa-phone">
+		  <a href="atmFinder.html" style="text-decoration: none;"><span class="findATM">Branch & ATM Finder</span></a>
+		  <img src="public/playground_assets/phoneSymbol.png" class="fa fa-phone">
+		  <a href="ContactUs" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
+		  <button class="button" onclick="">Login</button>
+		</div>
+	  </div>
+	  <nav>
+		<ul>
+		  <li><a href="homePageClient.html">Home</a></li>
+		  <li><a href="Aboutus.html">About Us</a></li>
+		  <li><a href="transactions.html">My Account</a></li>
+		  <li><a href="reports.html">Report a Problem?</a></li>
+	    </ul>
+	  </nav>
+	
+	<div class="container">
+		<div class="left">
+		  <div class="header">
+			<h2 class="animation a1">Register</h2>
+			<h4 class="animation a2">Fill out the form to get started</h4>
+		  </div>
+		  <form action="Register" method="post">
+			<div class="form">
+			  <div class="form-group">
+				<label for="name" class="animation a3">Name</label>
+				<input type="text" id="name" name="name" class="form-field animation a4" placeholder="Enter your name" required>
+				<div class="error-message"></div>
+			  </div>
+			  <div class="form-group">
+				<label for="email" class="animation a5">Email Address</label>
+				<input type="email" id="email" name="email" class="form-field animation a6" placeholder="Enter your email address" required>
+				<div class="error-message"></div>
+			  </div>
+			  <div class="form-group">
+				<label for="password" class="animation a7">Password</label>
+				<input type="password" id="password" name="password" class="form-field animation a8" placeholder="Enter your password" required          minlength="8" aria-describedby="password-help">
+				<div class="error-message"></div>
+				<small id="password-help" class="form-text text-muted">Your password must be at least 8 characters long.</small>
+			  </div>
+			  <div class="form-group">
+				<label for="confirm-password" class="animation a9">Confirm Password</label>
+				<input type="password" id="confirm-password" name="password2" class="form-field animation a10" placeholder="Confirm your password" required aria-describedby="password-mismatch">
+				<div class="error-message"></div>
+				<small id="password-mismatch" class="form-text text-danger">Passwords do not match!</small>
+			  </div>
+			  <div class="form-group">
+				<input type="checkbox" id="terms" name="terms" class="animation a11" required>
+				<label for="terms" class="animation a12">I agree to the <a href="#">terms and conditions</a>.</label>
+				<div class="error-message"></div>
+			  </div>
+			  <button class="animation a13" type="submit">REGISTER</button>
+			  <p class="animation a14">Already have an account? <a href="Login">Login</a></p>
+			</div>
+		  </form>
+		</div>
+	  </div>
+		<div class="right"></div>
+		<footer class="footer">
+			<div class="footer-content">
+			  <p>&copy; 2023 Cilvcki Bank. All rights reserved.</p>
+			  <p><a href="moreInformation.html">Privacy Policy</a> | <a href="moreInformation.html">Terms and Conditions</a></p>
+			</div>
+		  </footer>s
 
 </body>
 </html>

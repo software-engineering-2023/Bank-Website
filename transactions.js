@@ -93,7 +93,7 @@ window.onclick = function(event) {
 };
 
 
-// dummy data
+// notifications.js
 // Get the notification sections
 var unreadSection = document.getElementById("unread-section");
 var readSection = document.getElementById("read-section");
@@ -109,7 +109,13 @@ markReadBtn.addEventListener("click", function() {
   // Move checked notifications to the read section
   checkboxes.forEach(function(checkbox) {
     var notification = checkbox.parentNode;
-    readSection.querySelector(".notification-list").appendChild(notification);
+    var notificationMessage = document.createElement("p");
+    notificationMessage.className = "notification-message";
+    notificationMessage.textContent = notification.querySelector(".notification-due").textContent;
+    readSection.querySelector(".notification-list").appendChild(notificationMessage);
+    
+    // Remove the notification from the unread section
+    notification.parentNode.removeChild(notification);
   });
 });
 
@@ -158,5 +164,6 @@ notificationsData.forEach(function(notification) {
     <span class="notification-title">${notification.title}</span>
     <span class="notification-due">Reminder: You have a ${notification.type === "bill" ? "bill" : "payment"} due on ${notification.dueDate}</span>
   `;
+
   unreadNotificationList.appendChild(notificationItem);
 });

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="english">
+
+<head>
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <link href="./UserLoginPage.css" rel="stylesheet" />
+  <style>
+    /* Style for the pop-up */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+    
+    /* Style for the pop-up content */
+    .popup-content {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+      width: 80%;
+      max-width: 500px;
+      margin: 10% auto;
+      padding: 30px;
+      position: relative;
+      animation-name: zoom;
+      animation-duration: 0.3s;
+    }
+    
+    /* Style for the close button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #0066cf
+    }
+    
+    /* Style for the form label */
+    form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: left;
+    }
+    
+    /* Style for the form input */
+    form input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+      font-size: 16px;
+    }
+    
+    /* Style for the form submit button */
+    form input[type="submit"] {
+      background-color: #0066cc;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      align-content: center;
+      align-items: middle;
+    }
+    
+    form input[type="submit"]:hover {
+      background-color: #003366;
+      
+    }
+    
+    /* Style for the success message */
+    #success-message {
+      color: #0066cc;
+      font-weight: bold;
+      margin-top: 20px;
+      display: none;
+    }
+    
+    /* Animation for the pop-up */
+    @keyframes zoom {
+      from {
+        transform: scale(0.8);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+    
+    /* Style for the form validation error message */
+    .error-message {
+      color: #ff3333;
+      font-size: 14px;
+      margin-top: 5px;
+      text-align: left;
+    }
+    
+    /* Style for the form input when it has validation error */
+    input.error {
+      border: 2px solid #ff3333;
+      box-shadow: none;
+    }
+    
+    /* Style for the form input when it is focused */
+    input:focus {
+      outline: none;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    /* Style for the form input when it is hovered */
+    input:hover {
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    /* Style for the form input when it is disabled */
+    input:disabled {
+      opacity: 0.5;
+    }
+    p{
+      font-size: 20px;
+      font-weight: bold;
+      font: helvetica;
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+  <div class="backGroundForTheLogo">
+    <div class="left-section">
+      <img src="public\playground_assets\logo.png" alt="logo" id="img1" class="logo">
+    </div>
+  </div>
+  
+  <div class="loginOuterContainer">
+    <div class="loginInnerContainer">
+      <div style="text-align: center;">
+        <input placeholder="Username" style="background-image:url('public/playground_assets/clientpicture1410-4z18-200w.png');">
+        <input placeholder="Password" type="password" style="background-image: url('public/playground_assets/lockpicture149-djih-200h.png')">
+        <button class="loginButton">Login</button>
+        
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="new-user" style="margin-left: 30px;">
+              <a href="Register.html" style="text-decoration: none;color: blue;font-size: 14px;">New User</a>
+            </div>
+            <div class="forgot-password" style="margin-right: 30px;text-decoration: none;color: blue;font-size: 14px;">Forgot Password</div>
+          </div>
+          <div class="row">
+            <div class="register-instructions"  style="margin-left: 30px;">
+              <a href="https://www.youtube.com/watch?v=Hd3E6xVun4I" style="text-decoration: none;color: blue;font-size: 14px;">How to Register</a>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        
+      </div>
+  </div>
+  <!-- The pop-up for resetting password -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <h2>Reset Password</h2>
+      <p>Please enter your email address and authentication code to reset your password.</p>
+      <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="code">Authentication Code:</label>
+        <input type="text" id="code" name="code"><br><br>
+        <label for="password">New Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password"><br><br>
+        <input type="submit" value="Confirm">
+      </form>
+      <p id="success-message" style="display:none;">Password changed successfully!</p>
+    </div>
+  </div>
+
+</body>
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2023 Cilvcki Bank. All rights reserved.</p>
+    <p><a href="moreInformation.html">Privacy Policy</a> | <a href="moreInformation.html">Terms and Conditions</a></p>
+  </div>
+</footer>
+<script>
+    // Get the pop-up element
+    var popup = document.getElementById("popup");
+    
+    // Getthe button that opens the pop-up
+    var btn = document.querySelector(".forgot-password");
+    
+    // Get the close button element
+    var close = document.querySelector(".close");
+    
+    // When the user clicks on the button, open the pop-up
+    btn.onclick = function() {
+      popup.style.display = "block";
+    }
+    
+    // When the user clicks on the close button, close the pop-up
+    close.onclick = function() {
+      popup.style.display = "none";
+    }
+    
+    // When the user clicks outside of the pop-up, close it
+    window.onclick = function(event) {
+      if (event.target == popup) {
+        popup.style.display = "none";
+      }
+    }
+  </script>
+  
+</html>

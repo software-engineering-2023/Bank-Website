@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const fees = parseFloat(feesElement.textContent.replace("Fees: $", ""));
       const accountBalance = parseFloat(document.querySelector(".credit-card-balance h3").textContent.replace("Account Balance: $", ""));
 
-      if (amount <= fees && amount <= accountBalance && Number.isInteger(amount)) {
+      if (amount > 0 && amount <= fees && amount <= accountBalance && Number.isInteger(amount)) {
         errorMessage.textContent = "Amount is valid.";
         //change the color of the text to green
         errorMessage.style.color = "green";
@@ -70,19 +70,25 @@ document.addEventListener("DOMContentLoaded", function () {
         payNowButton.disabled = false; // Enable the button if amount is a whole number and meets the conditions
       }
       else {
-        if(!Number.isInteger(amount)){
-        errorMessage.textContent = "Error: Invalid amount.";
-        errorMessage.style.color = "red";
-        submissionMessage.style.display = "none";}
-        if(amount > fees){
-        errorMessage.textContent = "Error: Payment amount exceeds bills's fees.";
-        errorMessage.style.color = "red";
-        submissionMessage.style.display = "none";
+        if (!Number.isInteger(amount)) {
+          errorMessage.textContent = "Error: Invalid amount.";
+          errorMessage.style.color = "red";
+          submissionMessage.style.display = "none";
         }
-        if(amount > accountBalance){
-        errorMessage.textContent = "Error: Payment amount exceeds account balance.";
-        errorMessage.style.color = "red";
-        submissionMessage.style.display = "none";
+        if (amount > fees) {
+          errorMessage.textContent = "Error: Payment amount exceeds bills's fees.";
+          errorMessage.style.color = "red";
+          submissionMessage.style.display = "none";
+        }
+        if (amount > accountBalance) {
+          errorMessage.textContent = "Error: Payment amount exceeds account balance.";
+          errorMessage.style.color = "red";
+          submissionMessage.style.display = "none";
+        }
+        if (amount <= 0) {
+          errorMessage.textContent = "Error: Payment amount must be greater than 0.";
+          errorMessage.style.color = "red";
+          submissionMessage.style.display = "none";
         }
         payNowButton.disabled = true; // Disable the button if amount is not a whole number or does not meet the conditions
       }
@@ -92,11 +98,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const amount = parseFloat(partialPaymentInput.value);
       const fees = parseFloat(feesElement.textContent.replace("Fees: $", ""));
       const accountBalance = parseFloat(document.querySelector(".credit-card-balance h3").textContent.replace("Account Balance: $", ""));
-      
+
       if (amount <= accountBalance && amount <= fees) {
         const updatedBalance = accountBalance - amount;
         const updatedFees = fees - amount;
-    
+
         if (updatedFees === 0) {
           feesElement.textContent = "Fees: Paid";
           submissionMessage.style.display = "block";
@@ -107,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
           partialPaymentInput.disabled = true;
           payNowButton.disabled = true;
           document.querySelector(".credit-card-balance h3").textContent = "Account Balance: $" + updatedBalance.toFixed(2);
-    
+
           setTimeout(function () {
             var billTypeElement = payNowButton.parentNode.parentNode;
             billTypeElement.parentNode.removeChild(billTypeElement);
@@ -124,10 +130,10 @@ document.addEventListener("DOMContentLoaded", function () {
         submissionMessage.style.display = "none";
       }
     });
-    
-    
-    
-    
+
+
+
+
 
 
 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Loans2.css">
+  <title>Loan Application</title>
+</head>
+<body>
+    <div class="backGroundForTheLogo">
+        <div class="left-section">
+          <img src="public\playground_assets\logo.png" alt="logo" id="img1" class="logo">
+        </div>
+        <div class="right-section">
+    
+          <img src="public\playground_assets\marker.png" class="fa fa-phone">
+          <a href="atmFinder.html" style="text-decoration: none;"><span class="findATM">Branch & ATM Finder</span></a>
+          <img src="public/playground_assets/phoneSymbol.png" class="fa fa-phone">
+          <a href="ContactUs" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
+          <button class="button" onclick="">Login</button>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="homePageClient.html">Home</a></li>
+          <li><a href="Aboutus.html">About Us</a></li>
+          <li><a href="transactions.html">My Account</a></li>
+          <li><a href="reports.html">Report a Problem?</a></li>
+        </ul>
+      </nav>
+  <div class="container">
+    <h1>Loan Application</h1>
+    <div class="loan-types">
+      <div class="loan-type" id="car-loan">
+        <h2>Car Loan</h2>
+        <ul>
+            <li>Your income must meet a minimum threshold: For example, your income must be at least $2,000 per month.</li>
+            <li>Good credit score: Typically, a credit score of 650 or higher is required for a car loan.</li>
+            <li>Proof of employment: You may need to provide your employment verification, such as a letter from your employer or recent pay stubs.</li>
+            <li>Down payment: A down payment of 10-20% of the car's value may be required.</li>
+            <li>Proof of insurance: You need to show proof of auto insurance coverage.</li>
+            <li>Valid driver's license: A valid driver's license is essential to qualify for a car loan.</li>
+            <li>Vehicle information: You must provide details about the car you are purchasing, including make, model, and VIN number.</li>
+            <li>Loan term and interest rate: You should be aware of the desired loan term and the interest rate you are willing to accept.</li>
+          </ul>
+        <button class="apply-btn car-loan">Apply</button>
+      </div>
+      <div class="loan-type" id="personal-loan">
+        <h2>Personal Loan</h2>
+        <ul>
+            <li>Minimum credit score: A minimum credit score of 650 or higher may be required for loan approval.</li>
+            <li>Income verification: Applicants may need to provide recent pay stubs or bank statements to verify their income.</li>
+            <li>Employment and income stability: You may need to show at least two years of steady employment or income from the same source.</li>
+            <li>Loan purpose: Personal loans can be used for various purposes, such as debt consolidation or home improvement. Lenders may require documentation specifying the intended use of the loan funds.</li>
+            <li>Age requirement: Applicants must be at least 18 years old to be eligible for a personal loan.</li>
+            <li>Citizenship or residency status: Borrowers must be citizens or permanent residents of the country where the loan is being obtained.</li>
+            <li>Loan amount and repayment term: Lenders may have minimum and maximum loan amount limits, as well as restrictions on the repayment term.</li>
+          </ul>
+        <button class="apply-btn personal-loan">Apply</button>
+      </div>
+    </div>
+    <form id="application-form">
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" required>
+      </div>
+      <div class="form-group">
+        <label for="middle-name">Middle Name</label>
+        <input type="text" id="middle-name" required>
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" required>
+      </div>
+      <div class="form-group">
+        <label for="bank-account">Bank Account</label>
+        <input type="text" id="bank-account" required>
+      </div>
+      <div class="form-group">
+        <label for="phone-number">Phone Number</label>
+        <input type="tel" id="phone-number" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="success-message" style="display: none; text-align: center; margin-top: 20px; font-weight: bold; font-size: 18px;"></div>
+  </div>
+
+  <script>
+    var carLoanButton = document.querySelector('#car-loan .apply-btn');
+    var personalLoanButton = document.querySelector('#personal-loan .apply-btn');
+    var applicationForm = document.querySelector('#application-form');
+    var successMessage = document.querySelector('#success-message');
+
+    carLoanButton.addEventListener('click', function() {
+      applicationForm.style.display = 'block';
+      applicationForm.style.backgroundColor = 'grey';
+      successMessage.style.display = 'none';
+    });
+
+    personalLoanButton.addEventListener('click', function() {
+      applicationForm.style.display = 'block';
+      applicationForm.style.backgroundColor = 'darkgreen';
+      successMessage.style.display = 'none';
+    });
+
+    applicationForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      successMessage.textContent = 'Application submitted successfully!';
+      successMessage.style.display = 'block';
+      applicationForm.reset();
+      applicationForm.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

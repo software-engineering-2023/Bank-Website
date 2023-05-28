@@ -1,39 +1,94 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" type="text/css" href="transactions.css">
 </head>
+
 <body>
-  <header class="header">
-    <div class="header-content">
-      <img src="public\playground_assets\logo.png" alt="Logo" class="logo">
+  <div class="backGroundForTheLogo">
+    <div class="left-section">
+      <img src="public\playground_assets\logo.png" alt="logo" id="img1" class="logo">
     </div>
-  </header>
+    <div class="right-section">
+
+      <img src="public\playground_assets\marker.png" class="fa fa-phone">
+      <a href="atmFinder.html" style="text-decoration: none;"><span class="findATM">Branch & ATM Finder</span></a>
+      <img src="public/playground_assets/phoneSymbol.png" class="fa fa-phone">
+      <a href="ContactUs" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
+      <button class="button" onclick="">Login</button>
+    </div>
+  </div>
   <nav>
-    <a href="HomePage.html">Home</a>
-    <a href="Aboutus.html">About Us</a>
-    <a href="Radio&OptimizationPage.html">Radio</a>
-    <a href="TransmissionPage.html">Transmission</a>
-    <a href="SupplysPage.html">Supply</a>
-    <a href="RefrencePage.html">Reference</a>
-    <div class="animation start-home animation"></div>
+    <ul>
+      <li><a href="homePageClient.html">Home</a></li>
+      <li><a href="Aboutus.html">About Us</a></li>
+      <li><a href="transactions.html">My Account</a></li>
+      <li><a href="reports.html">Report a Problem?</a></li>
+    </ul>
   </nav>
+
   <main>
+    <h2 class="page-title">Account Summary</h2>
     <div class="container">
-      <h2 class="page-title">View Transactions</h2>
-      <div class="dropdown-container">
-        <label for="transaction-type">Select Transaction Type:</label>
-        <select id="transaction-type">
-          <option value="">Select Type</option>
-          <option value="bank-account">Bank Account Transactions</option>
-          <option value="credit-card">Credit Card Transactions</option>
-        </select>
+
+      <div class="section">
+        <div class="section-title-bar">
+          <h2 class="section-title">Account Information</h2>
+        </div>
+        <div class="section-content">
+          <div class="left-column">
+            <p>Name:</p>
+            <p>Account Number:</p>
+            <p>Credit Card Number:</p>
+          </div>
+          <div class="right-column">
+            <p>John Doe</p>
+            <p>1234567890</p>
+            <p>**** **** **** 1234</p>
+          </div>
+        </div>
       </div>
-      <div id="transaction-history" class="transaction-history">
-        <!-- Dummy transaction history will be dynamically populated here -->
+
+      <div class="section">
+        <div class="section-title-bar">
+          <h2 class="section-title">Credit Card Information</h2>
+        </div>
+        <div class="section-content">
+          <div class="left-column">
+            <p>Credit Card Type:</p>
+            <p>Credit Limit:</p>
+            <p>Rewards/Benefits:</p>
+          </div>
+          <div class="right-column">
+            <p>Prime</p>
+            <p>$10,000</p>
+            <p>5% cashback</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title-bar">
+          <h2 class="section-title">View Transactions</h2>
+        </div>
+        <div class="dropdown-container">
+          <label for="transaction-type">Select Transaction Type:</label>
+          <select id="transaction-type">
+            <option value="">Select Type</option>
+            <option value="bank-account">Bank Account Transactions</option>
+            <option value="credit-card">Credit Card Transactions</option>
+          </select>
+        </div>
+        <div id="transaction-history" class="transaction-history">
+          <!-- Dummy transaction history will be dynamically populated here -->
+        </div>
       </div>
     </div>
+
   </main>
+
+
   <footer class="footer">
     <div class="footer-content">
       <p>Contact us: 19111</p>
@@ -42,4 +97,5 @@
   </footer>
   <script src="transactions.js"></script>
 </body>
+
 </html>

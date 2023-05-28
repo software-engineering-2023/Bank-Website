@@ -175,6 +175,7 @@ button[type="submit"] {
   position: relative;
   display: inline-block;
   padding-bottom: 5px;
+  color: #333;
 }
 
 .bar-title::after {

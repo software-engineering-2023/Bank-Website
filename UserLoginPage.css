@@ -1,133 +1,38 @@
-html{
-  height: 5000px;
-}
-#hoverup {
-  width: 45%;
-  font-size: 30px;
-  font-family: 'Rajdhani', sans-serif;
+.OuterContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 500px;
+    /* top:50%; */
+    /* left: 50%; */
+    width: 1000px;
+    margin: auto;
+    background-color: #0b7079;
 }
 
-.backGroundForTheLogo {
-  background-color: rgba(4, 49, 54, 255);
+.LeftContainerContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 450px;
+    background-color: white;
+}
+
+.RightContainerContent{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-.left-section {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  width: 150px;
-  height: 70px;
-}
-
-.fa-phone {
-  width: 15px;
-  margin-left: 10px;
-  padding-right: 5px;
-}
-
-.right-section {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
-
-.contactUs {
-  color: white;
-  margin-right: 40px;
-  font-size: 16px;
-}
-
-.contactUs:hover {
-  text-decoration: underline;
-}
-
-.button {
+  width: 400px;
+  height: 450px;
   background-color: white;
-  color: green;
-  border-radius: 2px;
-  width: 160px;
-  height: 50px;
-  text-align: center;
-  font-size: 16px;
-  font-family: 'Rajdhani', sans-serif;
-}
-
-.button:hover {
-  background-color: #1abc9c;
-  color: white;
-  border: 1px solid #1abc9c;
-}
-
-.findATM {
-  color: white;
-  padding-right: 25px;
-}
-
-.findATM:hover {
-  text-decoration: underline;
-}nav {
-  background-color: #0b7079;
-  height: 50px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin: 0 10px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 16px;
-  text-transform: uppercase;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-  background-color: #1abc9c;
-}
-
-.loginOuterContainer{
-  background-image: url('public/playground_assets/testautox2lightai1913-8p6-400h.png');
-  background-size: cover;
-  height: 300px;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: right;
-}
-
-.loginInnerContainer{
-  background-color: #E0D0C2;
-  height: 300px;
-  width: 25%;
-  margin-right: 7%;
-  margin-top: 4%;
   opacity: 0.8;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  /* flex-direction: column; */
 }
 
 input{
-  width: 70%;
+  width: 50%;
   height: 30px;
   border-radius: 5px;
   border: 1px solid #0b7079;
@@ -141,35 +46,16 @@ input{
 }
 
 button{
-  width: 70%;
+  width: 59%;
   height: 30px;
   background-color: #1abc9c;
   border-style: none;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.footer {
-  background-color: #0b7079;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px;
-}
-
-.footer a {
-  color: #ffffff;
+a{
   text-decoration: none;
-}
+  color: #0b7079;
+  font-size: 16px;
+  padding-top: 10px;
 
-.footer a:hover {
-  text-decoration: underline;
 }

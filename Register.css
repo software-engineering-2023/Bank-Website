@@ -1,168 +1,260 @@
-/* Reset default browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Set body font and color */
-  body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  /* Style the header */
-  header {
-    background-color: #063333;
-    color: #c7cdbf;
-    padding: 10px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  
-  header h1 {
-    margin: 0;
-    font-size: 28px;
-  }
-  
-  /* Style the navigation menu */
-  nav {
-    background-color: #063333;
-    color: #c7cdbf;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    padding: 0 20px;
-  }
-  
-  nav a {
-    color: #c7cdbf;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  nav a:hover {
-    background-color: #968849;
-    color: #fff;
-  }
-  
-  /* Style the main section */
-  main {
-    margin-top: 80px;
-    padding: 30px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    margin: 5;
-    padding: 20px;
-    border: none;
-  }
-  
-  label {
-    margin-top: 10px;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 20px;
-  }
-  
-  input[type="submit"] {
-    background-color: #063333;
-    border: none;
-    color: #c7cdbf;
-    cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #968849;
-  }
-  
-  /* Style the footer */
-  footer {
-    background-color: #f9f9f9;
-    color: #333;
-   padding: 20px;
-    text-align: center;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    border-top: 1px solid #e1e1e1;
-  }
-  
-  footer a {
-    color: #063333;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  footer a:hover {
-    color: #968849;
-  }
-  
-  /* Add responsive design */
-  @media (max-width: 768px) {
-    /* Style the navigation menu */
-    nav {
-      padding: 0 10px;
-    }
-  
-    nav a {
-      padding: 10px;
-    }
-  
-    /* Style the footer */
-    footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-    }
-  }
-  /* Style the main section */
+header {
+  background-color: #063333;
+  color: #c7cdbf;
+  padding: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav li {
+  margin-right: 20px;
+}
+
+header nav li:last-child {
+  margin-right: 0;
+}
+
+header nav a {
+  color: #c7cdbf;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #968849;
+}
+
+/* Style the main section */
 main {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    min-height: 100vh;
-    padding: 30px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background color to enhance the visibility of the frame */
-    background-attachment: "home.jpg";
+  margin-top: 80px;
+  padding: 30px;
+}
+footer {
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  border-top: 1px solid #e1e1e1;
+}
+
+footer a {
+  color: #063333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #968849;
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+  header img {
+    max-width: 50%;
   }
-  
-  /* Style the form container */
-  .form-container {
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 150;
-  }
-  
-  /* Remove margin, padding, and border from the form */
-  
-  main {
-    position: relative;
-  }
-  
-  main img {
+
+  header nav {
     position: absolute;
-    top: 0;
+    top: 80px;
     right: 0;
-    z-index: -1;
+    left: 0;
+    background-color: #063333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-  main img {
+
+  header nav li {
     display: block;
+    margin: 10px 0;
+  }
+
+  main {
+    margin-top: 140px;
+  }
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #063333;
+  height: 60px;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav li {
+  margin: 0 10px;
+}
+
+header nav li a {
+  color: #c7cdbf;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+header nav li a:hover {
+  background-color: #968849;
+  color: #fff;
+}
+
+header nav button {
+  background-color: #063333;
+  border: none;
+  color: #c7cdbf;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+header nav button:hover {
+  background-color: #968849;
+}
+
+/* Style the footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  border-top: 1px solid #e1e1e1;
+}
+
+footer a {
+  color: #063333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #968849;
+}
+
+/* Set height of content */
+main {
+  min-height: 100vh;
+}
+
+/* Enable scrolling */
+main {
+  overflow-y: auto;
+  height: 100%;
+
+}
+
+/* Disable horizontal scrolling */
+body {
+  overflow-x: hidden;
+}
+.image-container {
+  position: relative;
+}
+
+.input-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input-container input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-container button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #063333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: #968849;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5); 
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button[type="submit"] {
+  margin: 10px 0;
+}
+
+button[type="submit"] {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
     margin: 0 auto;
   }
+}

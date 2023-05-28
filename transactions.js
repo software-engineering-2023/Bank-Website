@@ -48,32 +48,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Get the button element
-const reportProblemBtn = document.querySelector('.report-problem-btn');
-
-// Function to handle button click event
-function handleReportProblemClick() {
-  // Redirect to reports.html
-  window.location.href = 'reports.html';
-}
-
-// Event listener for button click
-reportProblemBtn.addEventListener('click', handleReportProblemClick);
-
-// Function to add/remove hover animation class
-function toggleHoverAnimation() {
-  const buttonRect = reportProblemBtn.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
-
-  if (buttonRect.top < windowHeight && buttonRect.bottom >= 0) {
-    reportProblemBtn.classList.add('hover-animation');
-  } else {
-    reportProblemBtn.classList.remove('hover-animation');
-  }
-}
-
-// Event listener for scroll event
-window.addEventListener('scroll', toggleHoverAnimation);
-
-// Initial check on page load
-toggleHoverAnimation();

@@ -19,21 +19,66 @@
     <div class="animation start-home animation"></div>
   </nav>
   <main>
+    <h2 class="page-title">Account Summary</h2>
     <div class="container">
-      <h2 class="page-title">View Transactions</h2>
-      <div class="dropdown-container">
-        <label for="transaction-type">Select Transaction Type:</label>
-        <select id="transaction-type">
-          <option value="">Select Type</option>
-          <option value="bank-account">Bank Account Transactions</option>
-          <option value="credit-card">Credit Card Transactions</option>
-        </select>
+      
+      <div class="section">
+        <div class="section-title-bar">
+          <h2 class="section-title">Account Information</h2>
+        </div>
+        <div class="section-content">
+          <div class="left-column">
+            <p>Name:</p>
+            <p>Account Number:</p>
+            <p>Credit Card Number:</p>
+          </div>
+          <div class="right-column">
+            <p>John Doe</p>
+            <p>1234567890</p>
+            <p>**** **** **** 1234</p>
+          </div>
+        </div>
       </div>
-      <div id="transaction-history" class="transaction-history">
-        <!-- Dummy transaction history will be dynamically populated here -->
+    
+      <div class="section">
+        <div class="section-title-bar">
+          <h2 class="section-title">Credit Card Information</h2>
+        </div>
+        <div class="section-content">
+          <div class="left-column">
+            <p>Credit Card Type:</p>
+            <p>Credit Limit:</p>
+            <p>Rewards/Benefits:</p>
+          </div>
+          <div class="right-column">
+            <p>Prime</p>
+            <p>$10,000</p>
+            <p>5% cashback</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="section">
+        <div class="section-title-bar">
+          <h2 class="section-title">View Transactions</h2>
+        </div>
+        <div class="dropdown-container">
+          <label for="transaction-type">Select Transaction Type:</label>
+          <select id="transaction-type">
+            <option value="">Select Type</option>
+            <option value="bank-account">Bank Account Transactions</option>
+            <option value="credit-card">Credit Card Transactions</option>
+          </select>
+        </div>
+        <div id="transaction-history" class="transaction-history">
+          <!-- Dummy transaction history will be dynamically populated here -->
+        </div>
       </div>
     </div>
+    
   </main>
+  
+  
   <footer class="footer">
     <div class="footer-content">
       <p>Contact us: 19111</p>

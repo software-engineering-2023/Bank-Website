@@ -66,3 +66,58 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// Get the pop-up element
+var popup = document.getElementById("popup");
+
+// Get the link for notifications
+var link = document.querySelector(".text");
+
+// Get the close button element
+var close = document.querySelector(".close");
+
+// When the user clicks on the link, open the pop-up
+link.onclick = function() {
+  popup.style.display = "block";
+};
+
+// When the user clicks on the close button, close the pop-up
+close.onclick = function() {
+  popup.style.display = "none";
+};
+
+// When the user clicks outside of the pop-up, close it
+window.onclick = function(event) {
+  if (event.target === popup) {
+    popup.style.display = "none";
+  }
+};
+
+
+// dummy data
+// Update checkbox labels with reminder message including dummy dates
+var dummyDates = {
+  gas: "June 1, 2023",
+  electricity: "June 5, 2023",
+  water: "June 10, 2023",
+  telephone: "June 15, 2023",
+  loans: "June 20, 2023",
+  "credit-card": "June 25, 2023"
+};
+
+var checkboxGas = document.getElementById("gas");
+checkboxGas.nextElementSibling.textContent = "Reminder: You have a gas bill to pay due (" + dummyDates.gas + ")";
+
+var checkboxElectricity = document.getElementById("electricity");
+checkboxElectricity.nextElementSibling.textContent = "Reminder: You have an electricity bill to pay due (" + dummyDates.electricity + ")";
+
+var checkboxWater = document.getElementById("water");
+checkboxWater.nextElementSibling.textContent = "Reminder: You have a water bill to pay due (" + dummyDates.water + ")";
+
+var checkboxTelephone = document.getElementById("telephone");
+checkboxTelephone.nextElementSibling.textContent = "Reminder: You have a telephone bill to pay due (" + dummyDates.telephone + ")";
+
+var checkboxLoans = document.getElementById("loans");
+checkboxLoans.nextElementSibling.textContent = "Reminder: You have a loan payment due (" + dummyDates.loans + ")";
+
+var checkboxCreditCard = document.getElementById("credit-card");
+checkboxCreditCard.nextElementSibling.textContent = "Reminder: You have a credit card bill to pay due (" + dummyDates["credit-card"] + ")";

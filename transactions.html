@@ -16,6 +16,7 @@
       <a href="atmFinder.html" style="text-decoration: none;"><span class="findATM">Branch & ATM Finder</span></a>
       <img src="public/playground_assets/phoneSymbol.png" class="fa fa-phone">
       <a href="ContactUs.html" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
+      <a class="text" href="#"> Notifications </a>
       <button class="button" onclick="">Login</button>
     </div>
   </div>
@@ -27,6 +28,43 @@
       <li><a href="reports.html">Report a Problem?</a></li>
     </ul>
   </nav>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <h2>Notifications</h2>
+      <form class="form">
+        <div class="notification-group">
+          <input type="checkbox" id="gas" name="gas" class="notification-checkbox">
+          <label for="gas"></label>
+        </div>
+        <div class="notification-group">
+          <input type="checkbox" id="electricity" name="electricity" class="notification-checkbox">
+          <label for="electricity"></label>
+        </div>
+        <div class="notification-group">
+          <input type="checkbox" id="water" name="water" class="notification-checkbox">
+          <label for="water"></label>
+        </div>
+        <div class="notification-group">
+          <input type="checkbox" id="telephone" name="telephone" class="notification-checkbox">
+          <label for="telephone"></label>
+        </div>
+        <div class="notification-group">
+          <input type="checkbox" id="loans" name="loans" class="notification-checkbox">
+          <label for="loans"></label>
+        </div>
+        <div class="notification-group">
+          <input type="checkbox" id="credit-card" name="credit-card" class="notification-checkbox">
+          <label for="credit-card"></label>
+        </div>
+        <input type="submit" value="Save" class="input">
+      </form>
+      <p id="success-message" style="display:none;">Notifications saved successfully!</p>
+    </div>
+  </div>
+  
+
 
   <main>
     <h2 class="page-title">Account Summary</h2>

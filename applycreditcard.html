@@ -1,72 +1,107 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Credit Card Application</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="applycreditcard.css">
+  <title>Credit Card Application</title>
 </head>
-
 <body>
   <div class="container">
-    <main>
-      <section class="left-section">
-        <h2>Advantages of our Credit Card</h2>
-        <div class="advantage">
-          <h3>Cashback Rewards</h3>
-          <p>Earn cashback on every purchase you make.</p>
-          <p>Get 1% cashback on all purchases.</p>
-        </div>
-        <div class="advantage">
-          <h3>Travel Benefits</h3>
-          <p>Enjoy travel perks, airline miles, and hotel discounts.</p>
-          <p>Get 1 mile for every $1 spent.</p>
-          <p>Get 10% off hotel bookings.</p>
-          <p>Get 10% off car rentals.</p>
-        </div>
-        <div class="advantage">
-          <h3>Enhanced Security</h3>
-          <p>Your transactions are protected with advanced security measures.</p>
-          <p>Get 24/7 fraud monitoring.</p>
-          <p>Get zero liability for unauthorized purchases.</p>
-          <p>Get free credit score monitoring.</p>
-        </div>
-      </section>
-
-      <section class="center-section">
-        <h1>Apply for a Credit Card</h1>
-        <p>Get access to exclusive benefits and rewards.</p>
-        <p>Fill out the form below to apply for a credit card.</p>
-        <form>
-          <div class="form-group">
-            <label for="name">First Name:</label>
-            <input type="text" id="name" required>
-          </div>
-            <div class="form-group">
-                <label for="Middle Name">Middle Name</label>
-                <input type="text" id="Middle Name" required>
-            </div>
-            <div>
-                <div class="form-group">
-                    <label for="Last Name">Last Name</label>
-                    <input type="text" id="Last Name" required>
-            </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" required>
-          </div>
-            <div class="form-group">
-                <label for="Bank Account">Bank Account</label>
-                <input type="text" id="Bank Account" required>
-            </div>
-          <button type="submit" class="btn">Submit Application</button>
-        </form>
-      </section>
-    </main>
+    <h1>Credit Card Application</h1>
+    <div class="card-types">
+      <div class="card-type">
+        <img src="public/playground_assets/Classic.JPG.png" alt="Classic Card">
+        <h2>Classic Card</h2>
+        <ul>
+          <li>Cash Withdrawals up to EGP 7,000 per day</li>
+          <li>Credit limit up to 4,999</li>
+          <li>Reward points: 0.5 Point for each 1 EGP purchase</li>
+          <li>Longest Grace period</li>
+          <li>Card settlement through ATM network</li>
+          <li>Discounts at a variety of selected stores</li>
+          <li>Carry out transactions at all government entities (ex. taxes, insurance, utilities...) that operate Meeza POS systems</li>
+          <li>Contactless feature</li>
+        </ul>
+      </div>
+      <div class="card-type">
+        <img src="public/playground_assets/Platinum.jpg" alt="Titanium Card">
+        <h2>Titanium Card</h2>
+        <ul>
+          <li>Cash Withdrawals up to EGP 20,000 per day</li>
+          <li>Credit limit up to 49,999</li>
+          <li>Reward points: 0.6 Point for each 1 EGP purchase</li>
+          <li>Longest Grace period</li>
+          <li>Access to VIP Lounges</li>
+          <li>Card settlement through ATM network</li>
+          <li>Discounts at a variety of selected stores</li>
+          <li>Carry out transactions at all government entities (ex. taxes, insurance, utilities...) that operate Meeza POS systems</li>
+          <li>Contactless feature</li>
+        </ul>
+      </div>
+      <div class="card-type">
+        <img src="public/playground_assets/Titanium.jpg" alt="Platinum Card">
+        <h2>Platinum card</h2>
+        <ul>
+          <li>Cash Withdrawals up to EGP 60,000 per day</li>
+          <li>Credit limit up to 750,000</li>
+          <li>Reward points: 0.9 Point for each 1 EGP purchase</li>
+          <li>Longest Grace period</li>
+          <li>Access to VIP Lounges</li>
+          <li>Card settlement through ATM network</li>
+          <li>Discounts at a variety of selected stores</li>
+          <li>Carry out transactions at all government entities (ex. taxes, insurance, utilities...) that operate Meeza POS systems</li>
+          <li>Contactless feature</li>
+        </ul>
+      </div>
+    </div>
+    <form id="application-form">
+      <h2>Apply for a Credit Card</h2>
+      <div class="form-group">
+        <label for="first-name">First Name</label>
+        <br>
+        <input type="text" id="first-name" required>
+      </div>
+      <div class="form-group">
+        <label for="middle-name">Middle Name</label>
+        <br>
+        <input type="text" id="middle-name" required>
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <br>
+        <input type="text" id="last-name" required>
+      </div>
+      <div class="form-group">
+        <label for="phone-number">Phone Number</label>
+        <br>
+        <input type="tel" id="phone-number" required>
+      </div>
+      <div class="form-group">
+        <label for="bank-account">Bank Account</label>
+        <br>
+        <input type="text" id="bank-account" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
   </div>
-</body>
 
+  <script>
+    var form = document.getElementById('application-form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      var firstName = document.getElementById('first-name').value;
+      var middleName = document.getElementById('middle-name').value;
+      var lastName = document.getElementById('last-name').value;
+      var phoneNumber = document.getElementById('phone-number').value;
+      var bankAccount = document.getElementById('bank-account').value;
+      
+      // Perform validation or further processing of the form data here
+      
+      // Display a success message
+      alert('Thank you for applying for a credit card, ' + firstName + ' ' + middleName + ' ' + lastName + '. We will contact you shortly at ' + phoneNumber + ' regarding your application.');
+    });
+  </script>
+</body>
 </html>

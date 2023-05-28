@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const fullPaymentButton = billType.querySelector(".full-payment-button");
     const partialPaymentButton = billType.querySelector(".partial-payment-button");
     const partialPaymentInput = billType.querySelector(".partial-payment-input");
+    const payNowButton = billType.querySelector(".pay-now-button");
 
     showDetailsButton.addEventListener("click", function () {
       const details = billType.querySelector(".details");
@@ -36,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     partialPaymentButton.addEventListener("click", function () {
       partialPaymentInput.style.display = "block";
+      payNowButton.style.display = "block";
+      payNowButton.disabled = true; // Disable the button initially
     });
 
     partialPaymentInput.addEventListener("input", function () {
@@ -43,22 +46,41 @@ document.addEventListener("DOMContentLoaded", function () {
       const fees = parseFloat(feesElement.textContent.replace("Fees: $", ""));
       const accountBalance = parseFloat(document.querySelector(".credit-card-balance h3").textContent.replace("Account Balance: $", ""));
 
-      if (amount <= accountBalance) {
-        if (amount >= fees) {
-          const updatedBalance = accountBalance - amount;
-          feesElement.textContent = "Fees: Paid";
-          submissionMessage.style.display = "block";
-          errorMessage.textContent = "";
-          fullPaymentButton.disabled = true;
-          partialPaymentButton.disabled = true;
-          partialPaymentInput.style.display = "none";
-          document.querySelector(".credit-card-balance h3").textContent = "Account Balance: $" + updatedBalance.toFixed(2);
-        } else {
-          errorMessage.textContent = "Error: Payment amount should be greater than or equal to the fees.";
-          submissionMessage.style.display = "none";
-        }
+      if (amount <= fees && amount <= accountBalance && Number.isInteger(amount)) {
+        payNowButton.disabled = false; // Enable the button if amount is a whole number and meets the conditions
       } else {
-        errorMessage.textContent = "Error: Insufficient balance to make the payment.";
+        payNowButton.disabled = true; // Disable the button if amount is not a whole number or does not meet the conditions
+      }
+    });
+
+    payNowButton.addEventListener("click", function () {
+      const amount = parseFloat(partialPaymentInput.value);
+      const fees = parseFloat(feesElement.textContent.replace("Fees: $", ""));
+      const accountBalance = parseFloat(document.querySelector(".credit-card-balance h3").textContent.replace("Account Balance: $", ""));
+
+      if (amount < fees && amount <= accountBalance) {
+        const updatedBalance = accountBalance - amount;
+        const updatedFees = fees - amount;
+        feesElement.textContent = "Fees: $" + updatedFees.toFixed(2);
+        submissionMessage.style.display = "block";
+        errorMessage.textContent = "";
+        fullPaymentButton.disabled = true;
+        partialPaymentButton.disabled = true;
+        partialPaymentInput.disabled = true;
+        payNowButton.disabled = true;
+        document.querySelector(".credit-card-balance h3").textContent = "Account Balance: $" + updatedBalance.toFixed(2);
+      } else if (amount === fees) {
+        const updatedBalance = accountBalance - amount;
+        feesElement.textContent = "Fees: Paid";
+        submissionMessage.style.display = "block";
+        errorMessage.textContent = "";
+        fullPaymentButton.disabled = true;
+        partialPaymentButton.disabled = true;
+        partialPaymentInput.disabled = true;
+        payNowButton.disabled = true;
+        document.querySelector(".credit-card-balance h3").textContent = "Account Balance: $" + updatedBalance.toFixed(2);
+      } else {
+        errorMessage.textContent = "Error: Please enter a valid payment amount.";
         submissionMessage.style.display = "none";
       }
     });

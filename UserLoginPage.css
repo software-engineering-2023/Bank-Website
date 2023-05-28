@@ -112,7 +112,7 @@ nav ul li a:hover {
 
 .loginInnerContainer{
   background-color: #E0D0C2;
-  height: 200px;
+  height: 300px;
   width: 25%;
   margin-right: 7%;
   margin-top: 4%;
@@ -120,16 +120,37 @@ nav ul li a:hover {
   border-radius: 10px;
   display: flex;
   justify-content: center;
+  /* flex-direction: column; */
 }
 
 input{
-  width: 80%;
+  width: 70%;
   height: 30px;
   border-radius: 5px;
   border: 1px solid #0b7079;
   margin-top: 20px;
   margin-bottom: 10px;
-  padding-left: 10px;
+  padding-left: 40px;
   flex-direction: column;
-  
+  background-repeat:no-repeat;
+  background-position:left top;
+  font-size: medium;
+}
+
+button{
+  width: 70%;
+  height: 30px;
+  background-color: #1abc9c;
+  border-style: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }

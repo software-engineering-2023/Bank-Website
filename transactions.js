@@ -1,3 +1,21 @@
+// transactions.js
+
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', function() {
+  // Find the "Try Now" button
+  var tryNowBtn = document.querySelector('.try-now-btn');
+
+  // Add a click event listener to the button
+  tryNowBtn.addEventListener('click', function(event) {
+    // Prevent the default behavior of the button
+    event.preventDefault();
+
+    // Redirect the user to "bills.html"
+    window.location.href = 'bills.html';
+  });
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
   var transactionTypeDropdown = document.getElementById('transaction-type');
   var transactionHistory = document.getElementById('transaction-history');

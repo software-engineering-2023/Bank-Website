@@ -58,31 +58,23 @@ document.addEventListener("DOMContentLoaded", function () {
       const fees = parseFloat(feesElement.textContent.replace("Fees: $", ""));
       const accountBalance = parseFloat(document.querySelector(".credit-card-balance h3").textContent.replace("Account Balance: $", ""));
 
-      if (amount < fees && amount <= accountBalance) {
+      if (amount > 0 && amount <= fees && amount <= accountBalance) {
         const updatedBalance = accountBalance - amount;
         const updatedFees = fees - amount;
         feesElement.textContent = "Fees: $" + updatedFees.toFixed(2);
         submissionMessage.style.display = "block";
         errorMessage.textContent = "";
-        fullPaymentButton.disabled = true;
-        partialPaymentButton.disabled = true;
-        partialPaymentInput.disabled = true;
-        payNowButton.disabled = true;
-        document.querySelector(".credit-card-balance h3").textContent = "Account Balance: $" + updatedBalance.toFixed(2);
-      } else if (amount === fees) {
-        const updatedBalance = accountBalance - amount;
-        feesElement.textContent = "Fees: Paid";
-        submissionMessage.style.display = "block";
-        errorMessage.textContent = "";
-        fullPaymentButton.disabled = true;
-        partialPaymentButton.disabled = true;
-        partialPaymentInput.disabled = true;
-        payNowButton.disabled = true;
+        partialPaymentButton.disabled = updatedFees === 0;
+        partialPaymentInput.disabled = updatedFees === 0;
+        if (updatedFees === 0) {
+          payNowButton.disabled = true;
+        }
         document.querySelector(".credit-card-balance h3").textContent = "Account Balance: $" + updatedBalance.toFixed(2);
       } else {
         errorMessage.textContent = "Error: Please enter a valid payment amount.";
         submissionMessage.style.display = "none";
       }
     });
+
   });
 });

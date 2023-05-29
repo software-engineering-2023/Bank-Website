@@ -205,9 +205,13 @@
     padding-right: 5px;
 }
 
-a.text {
+.text {
     color: white;
     padding-right: 20px;
+}
+
+.text:hover {
+    text-decoration: underline;
 }
 
 .right-section {

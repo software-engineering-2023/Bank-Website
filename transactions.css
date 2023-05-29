@@ -251,6 +251,22 @@ nav ul li a:hover {
   background-color: #06656e;
 }
 
+.random-class {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0b7079;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  box-shadow: none;
+  
+}
+
+.random-class:hover {
+  background-color: #06656e;
+}
+
 .popup {
   display: none;
   position: fixed;
@@ -433,9 +449,10 @@ nav ul li a:hover {
   opacity: 0.5;
 }
 
-.notify:hover{
+.notify:hover {
   text-decoration: underline;
 }
+
 /* New CSS for Create a Reminder section */
 
 #create-section {
@@ -500,6 +517,7 @@ nav ul li a:hover {
   display: none;
   margin-top: 10px;
 }
+
 /* CSS for the notification functionality */
 #reminder-section {
   display: none;
@@ -530,6 +548,7 @@ nav ul li a:hover {
 #reminder-section .notification-message {
   margin-top: 10px;
 }
+
 /* CSS for the credit card points */
 #credit-card-input {
   display: flex;

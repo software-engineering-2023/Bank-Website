@@ -100,7 +100,27 @@
             <p>**** **** **** 1234</p>
           </div>
         </div>
+
+        <button onclick="openNewAccount()" class="random-class">Open New
+          Account</button>
+        <button onclick="closeAccount()" class="random-class">Close Account</button>
+
+
+
+
+
       </div>
+
+      <script>
+        function openNewAccount() {
+          window.location.href = "OpenNewAccount.html";
+        }
+
+        function closeAccount() {
+          window.location.href = "ClosingAccount.html";
+        }
+      </script>
+
 
       <div class="section">
         <div class="section-title-bar">
@@ -182,7 +202,7 @@
           <h2 class="section-title">Credit Card Points</h2>
         </div>
         <div class="section-content">
-          <h3 class="subtitle2">Learn about your credit card points, cashback, and rewards</h3>
+          <h3 class="subtitle">Learn about your credit card points, cashback, and rewards</h3>
           <div class="btn-container">
             <button id="learn-btn" class="try-now-btn">Learn Now</button>
             <div id="credit-card-points"></div>

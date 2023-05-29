@@ -49,14 +49,14 @@
             notifications
             </span>
           <a class="text" href="#" style="text-decoration: none;"><span class="notify"><span class="notify">Notifications and Reminders</span></a>
-          <button class="button" onclick="">Login</button>
+          <button class="button" onclick=""><a href="UserLogin.html" style="text-decoration: none;color: inherit;">Login</a></button>
         </div>
       </div>
       <nav>
         <ul>
           <li><a href="homePageClient.html">Home</a></li>
           <li><a href="Aboutus.html">About Us</a></li>
-          <li><a href="transactions.html">My Account</a></li>
+          <li><a href="transactions.html" onclick="checkIfLoggedIn(event)">My Account</a></li>
           <li><a href="reports.html">Report a Problem?</a></li>
         </ul>
       </nav>
@@ -268,6 +268,7 @@
       </footer>
     
     <script src="homePageClient.js"></script>
+    <script src="glob.js"></script>
 </body>
 
 </html>

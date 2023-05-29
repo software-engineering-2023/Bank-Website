@@ -7,6 +7,21 @@
   <title>Form Loan</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script>
+      // Get the submit button element
+      const submitButton = document.getElementById("submit_button");
+    
+      // Get the submission message element
+      const submissionMessage = document.getElementById("submission_message");
+    
+      // Add event listener to the submit button
+      submitButton.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent form submission (optional)
+    
+        // Update the submission message text
+        submissionMessage.textContent = "Done";
+      });
+    </script>
 </head>
 
 <body>
@@ -39,7 +54,7 @@
 
   <div id="popup" class="popup">
     <div class="popup-content">
-      <span class="close">&times;</span>
+      <span class="close">&times;</span>  
       <h2>Notifications and Reminders</h2>
       <nav class="notification-nav">
         <ul>
@@ -122,6 +137,8 @@
       <p>&copy; 2023 Cilvcki Bank. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="FormLoan.js"></script>
 </body>
 
 </html>

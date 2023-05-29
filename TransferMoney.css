@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.notify:hover{
+  text-decoration: underline;
+}
+
 .logo {
   width: 150px;
   height: 70px;

@@ -395,7 +395,9 @@ nav ul li a:hover {
 #reminder-section .notification-list {
   margin: 0;
 }
-
+.notify:hover{
+  text-decoration: underline;
+}
 #reminder-section .notification-item {
   display: block;
   background-color: rgba(4, 49, 54, 255);

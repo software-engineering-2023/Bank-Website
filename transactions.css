@@ -433,6 +433,9 @@ nav ul li a:hover {
   opacity: 0.5;
 }
 
+.notify:hover{
+  text-decoration: underline;
+}
 /* New CSS for Create a Reminder section */
 
 #create-section {

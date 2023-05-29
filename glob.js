@@ -6,24 +6,32 @@ function setLoggedIn() {
     isLoggedIn = true;
 }
 
+function logout() {
+    isLoggedIn = false;
+    toggleLoginButton();
+    // Perform any other logout tasks if needed
+  }
+  
+
 // Example login function
 function loginInUserPage() {
     // Perform login validation and authentication here
     // If login is successful, call the setLoggedIn() function
-    var username = document.getElementById("email").value;
-    var password = document.getElementById("pass").value;
-    if (username == "seif.hoss@lol.com" && password == "123") {
+    var username = document.getElementById("email123").value;
+    var password = document.getElementById("pass123").value;
+    if (username === "seif.hoss@lol.com" && password === "123") {
         setLoggedIn();
-        window.location.href = "transactions.html";
+        location.replace('/transactions.html');
     } else {
+        
         if (username == "banker@lol.com" && password == "123") {
             setLoggedIn();
-            window.location.href = "BankerAccount.html";
+            location.replace('/BankerAccount.html');
         }
         else {
             if (username == "admin@lol.com" && password == "123") {
                 setLoggedIn();
-                window.location.href = "admin.html";
+                location.replace('/Admin.html');
             }
             else {
                 alert("Wrong username or password.");
@@ -38,3 +46,16 @@ function checkIfLoggedIn(event) {
         alert("You are not logged in.");
     }
 }  
+
+function toggleLoginButton() {
+    alert('hi');
+    const loginButton = document.getElementById("loginButton");
+    alert('hi');
+    if (isLoggedIn) {
+      loginButton.textContent = "Logout";
+      loginButton.setAttribute("onclick", "logout()");
+    } else {
+      loginButton.textContent = "Login";
+      loginButton.setAttribute("onclick", "loginInUserPage()");
+    }
+}

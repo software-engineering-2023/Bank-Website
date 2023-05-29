@@ -445,7 +445,9 @@
     border-right-style: solid;
     overflow-y: scroll;
 }
-
+.notify:hover{
+  text-decoration: underline;
+}
 .location {
     padding-left: 20px;
     height: 150px;

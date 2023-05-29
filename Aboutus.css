@@ -399,7 +399,9 @@ nav ul li a:hover {
   padding: 10px;
   margin-bottom: 10px;
 }
-
+.notify:hover{
+  text-decoration: underline;
+}
 #reminder-section .notification-title {
   font-weight: bold;
 }

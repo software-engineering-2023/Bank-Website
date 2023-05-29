@@ -512,12 +512,11 @@ body {
     text-align: center;
     padding: 5px;
   }
-  
-  .footer a {
+  .footer content{
+    text-align: center;
     color: #ffffff;
-    text-decoration: none;
   }
-  
+/* footer not working */
   .footer a:hover {
     text-decoration: underline;
   }

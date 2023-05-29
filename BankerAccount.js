@@ -11,7 +11,7 @@
       event.preventDefault();
 
       // Redirect the user to "bills.html"
-      window.location.href = 'bills.html';
+      window.location.href = 'ReportHandling.html';
     });
   });
 

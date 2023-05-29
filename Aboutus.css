@@ -1,144 +1,139 @@
-#hoverup {
-    width: 45%;
-    font-size: 30px;
-    font-family: 'Rajdhani', sans-serif;
-}
-
 .backGroundForTheLogo {
-    background-color: rgba(4, 49, 54, 255);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
+  background-color: rgba(4, 49, 54, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
 .left-section {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-    width: 150px;
-    height: 70px;
+  width: 150px;
+  height: 70px;
 }
 
 .fa-phone {
-    width: 15px;
-    margin-left: 10px;
-    padding-right: 5px;
+  width: 15px;
+  margin-left: 10px;
+  padding-right: 5px;
 }
+
 a.text {
   color: white;
   padding-right: 20px;
 }
 
 .right-section {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  position: relative;
 }
 
 .contactUs {
-    color: white;
-    margin-right: 38px;
-    font-size: 16px;
+  color: white;
+  margin-right: 38px;
+  font-size: 16px;
 }
 
 .contactUs:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .button {
-    background-color: white;
-    color: green;
-    border-radius: 2px;
-    width: 160px;
-    height: 50px;
-    text-align: center;
-    font-size: 16px;
-    font-family: 'Rajdhani', sans-serif;
-    
+  background-color: white;
+  color: green;
+  border-radius: 2px;
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
+
 }
 
 .button:hover {
-    background-color: #1abc9c;
-    color: white;
-    border: 1px solid #1abc9c;
+  background-color: #1abc9c;
+  color: white;
+  border: 1px solid #1abc9c;
 }
 
 .findATM {
-    color: white;
-    padding-right: 25px;
+  color: white;
+  padding-right: 25px;
 }
 
 .findATM:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
 nav {
-    background-color: #0b7079;
-    height: 50px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    margin: 0 10px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 16px;
-    text-transform: uppercase;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    background-color: #1abc9c;
-  }
+  background-color: #0b7079;
+  height: 50px;
+}
 
-  .section-content .subtitle {
-    /* Styles for the subtitle */
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-right: 20px;
-  }
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-  .section-content .btn-container {
-    /* Styles for the button container */
-    margin-top: 5px;
-    text-align: center;
-  }
-  .section-content .try-now-btn {
-    /* Styles for the "Try Now" button */
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #0b7079;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .section-content .try-now-btn:hover {
-    /* Styles when hovering over the button */
-    background-color: #06656e;
-  }  
+nav ul li {
+  margin: 0 10px;
+}
 
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
-/* for the pop up */
+nav ul li a:hover {
+  background-color: #1abc9c;
+}
+
+.section-content .subtitle {
+  /* Styles for the subtitle */
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.section-content .btn-container {
+  /* Styles for the button container */
+  margin-top: 5px;
+  text-align: center;
+}
+
+.section-content .try-now-btn {
+  /* Styles for the "Try Now" button */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0b7079;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.section-content .try-now-btn:hover {
+  /* Styles when hovering over the button */
+  background-color: #06656e;
+}
+
 .popup {
   display: none;
   position: fixed;
@@ -288,10 +283,11 @@ nav {
 
 @keyframes zoom {
   from {
-    transform: scale(0.8);
+      transform: scale(0.8);
   }
+
   to {
-    transform: scale(1);
+      transform: scale(1);
   }
 }
 
@@ -320,6 +316,101 @@ nav {
   opacity: 0.5;
 }
 
+/* New CSS for Create a Reminder section */
+
+#create-section {
+  display: none;
+}
+
+/* Additional styles for Create a Reminder section */
+.create-reminder-section {
+  margin-bottom: 20px;
+}
+
+.create-reminder-section h3 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+#create-tab {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+#create-tab:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#create-section .label {
+  margin-top: 10px;
+}
+
+#create-section .input[type="text"],
+#create-section .input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#create-section .input[type="submit"] {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+#create-section .input[type="submit"]:hover {
+  background-color: #003366;
+}
+
+#create-section #success-message {
+  display: none;
+  margin-top: 10px;
+}
+
+/* CSS for the notification functionality */
+#reminder-section {
+  display: none;
+}
+
+#reminder-section .notification-list {
+  margin: 0;
+}
+
+#reminder-section .notification-item {
+  display: block;
+  background-color: rgba(4, 49, 54, 255);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#reminder-section .notification-title {
+  font-weight: bold;
+}
+
+#reminder-section .notification-due {
+  font-size: 14px;
+}
+
+#reminder-section .notification-message {
+  margin-top: 10px;
+}
 .backGroundForTheLogo {
   background-color: rgba(4, 49, 54, 255);
   display: flex;

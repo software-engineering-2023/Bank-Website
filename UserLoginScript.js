@@ -45,36 +45,20 @@ btn1.onclick = function () {
 }
 
 // When the user clicks on the close button, close the pop-up
-// close1.onclick = function () {
-//     var password = document.getElementById("password").value;
-//     var confirmPassword = document.getElementById("confirm-password").value;
-
-//     if (password == confirmPassword) {
-//         successMessage.style.display = "flex"; // Display success message
-//         setTimeout(function () {
-//             window.location.href = "homePageClient.html";
-//         }, 5000);
-//     } else {
-//         alert("Passwords do not match.");
-//     }
-// }
-
-function validateForm(event) {
-    event.preventDefault(); // Prevent form submission
-    
+close1.onclick = function () {
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirm-password").value;
-    var successMessage = document.getElementById("success-message");
-  
-    if (password === confirmPassword) {
-      successMessage.style.display = "block"; // Display success message
-      setTimeout(function() {
-        window.location.href = "homePageClient.html";
-      }, 2000);
+
+    if (password == confirmPassword) {
+        successMessage.style.display = "flex"; // Display success message
+        setTimeout(function () {
+            window.location.href = "UserLogin.html";
+        }, 5000);
     } else {
-      alert("Passwords do not match.");
+        alert("Passwords do not match.");
     }
-  }
+}
+  
 
 // When the user clicks outside of the pop-up, close it
 window.onclick = function (event) {

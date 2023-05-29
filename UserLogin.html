@@ -33,7 +33,6 @@
 
         <p class="text">Don't have an account ? <a class="register" href="#">register</a></p>
         <p class="text">Forgot your Password ? <a class="forgot-password" href="#">forget password</a></p>
-
       </form>
 
     </div>
@@ -53,7 +52,6 @@
           <input type="password" id="confirm-password" name="confirm-password" class="input"><br><br>
           <input type="submit" value="Confirm" class="input">
         </form>
-        <p id="success-message" style="display:none;">Password changed successfully!</p>
       </div>
     </div>
 
@@ -63,19 +61,18 @@
         <span class="close1">&times;</span>
         <h2>Register</h2>
         <p>Fill out the form to get started</p>
-        <form class="form" onsubmit="validateForm(event)">
+        <form class="form" id="register-form" class="form">
           <label for="email" class="label">Email:</label>
           <input type="email" id="email" name="email" class="input"><br><br>
           <label for="password" class="label">New Password:</label>
           <input type="password" id="password" name="password" class="input"><br><br>
           <label for="confirm-password" class="label">Confirm Password:</label>
           <input type="password" id="confirm-password" name="confirm-password" class="input"><br><br>
-          <p id="success-message" >User created successfully!</p>
           <input type="submit" value="Register" class="input">
         </form>
-        
       </div>
     </div>
+    
     <script src="UserLoginScript.js"></script>
   </body>
 </html>

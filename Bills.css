@@ -1,11 +1,12 @@
 body {
   background-color: rgba(4, 49, 54, 255);
   color: white;
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
-
+.notify:hover{
+  text-decoration: underline;
+}
 /* for the pop up */
 .popup {
   display: none;

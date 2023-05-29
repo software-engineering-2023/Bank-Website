@@ -195,19 +195,25 @@
                         priority: 'Low'
                     }
                 ];
+                var tasksVisible = false; // Track the visibility state
 
                 viewTasksBtn.addEventListener('click', function () {
-                    pendingTasksDiv.innerHTML = ''; // Clear previous tasks
-
-                    if (tasks.length === 0) {
-                        var noTasksMessage = document.createElement('p');
-                        noTasksMessage.textContent = 'No pending tasks.';
-                        pendingTasksDiv.appendChild(noTasksMessage);
+                    if (tasksVisible) {
+                        pendingTasksDiv.innerHTML = ''; // Clear tasks
+                        tasksVisible = false;
                     } else {
-                        tasks.forEach(function (task) {
-                            var taskItem = createTaskItem(task);
-                            pendingTasksDiv.appendChild(taskItem);
-                        });
+                        pendingTasksDiv.innerHTML = ''; // Clear previous tasks
+                        if (tasks.length === 0) {
+                            var noTasksMessage = document.createElement('p');
+                            noTasksMessage.textContent = 'No pending tasks.';
+                            pendingTasksDiv.appendChild(noTasksMessage);
+                        } else {
+                            tasks.forEach(function (task) {
+                                var taskItem = createTaskItem(task);
+                                pendingTasksDiv.appendChild(taskItem);
+                            });
+                        }
+                        tasksVisible = true;
                     }
                 });
 
@@ -244,6 +250,7 @@
                 }
             </script>
             <!--end section  -->
+
 
 
         </div>

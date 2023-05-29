@@ -30,7 +30,6 @@
 
             prevScrollPos = currentScrollPos;
         };
-
     </script>
 </head>
 
@@ -46,17 +45,44 @@
             <a href="atmFinder.html" style="text-decoration: none;"><span class="findATM">Branch & ATM Finder</span></a>
             <img src="public/playground_assets/phoneSymbol.png" class="fa fa-phone">
             <a href="ContactUs.html" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
-            <button class="button" onclick="">Login</button>
+            <a class="text" href="#" style="text-decoration: none;"> Notifications </a>
+            <button class="button" onclick=""><a href="UserLogin.html" style="text-decoration: none;color: inherit;">Login</a></button>
         </div>
     </div>
-
     <nav>
-        <a href="HomePage.html">Home</a>
-        <a href="Aboutus.html">About Us</a>
-        <a href="Radio&OptimizationPage.html">Radio</a>
-        <a href="TransmissionPage.html">Transmission</a>
-        <div class="animation start-home animation"></div>
+        <ul>
+            <li><a href="homePageClient.html">Home</a></li>
+            <li><a href="Aboutus.html">About Us</a></li>
+            <li><a href="transactions.html">My Account</a></li>
+            <li><a href="reports.html">Report a Problem?</a></li>
+        </ul>
     </nav>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Notifications</h2>
+            <nav class="notification-nav">
+                <ul>
+                    <li><a href="#" class="active" data-tab="unread">Unread</a></li>
+                    <li><a href="#" data-tab="read">Read</a></li>
+                </ul>
+            </nav>
+            <div class="notification-section" id="unread-section">
+                <h3>Unread Notifications</h3>
+                <div class="notification-list">
+                    <!-- Unread notifications will be dynamically populated here -->
+                </div>
+                <button id="mark-read-btn">Mark as Read</button>
+            </div>
+            <div class="notification-section" id="read-section" style="display: none;">
+                <h3>Read Notifications</h3>
+                <div class="notification-list">
+                    <!-- Read notifications will be dynamically populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <div class="changingWallpaper">
@@ -68,15 +94,15 @@
                 you're looking for?</h1>
             <h2 style="color: white;font-family: 'Helvetica Neue', Arial, sans-serif;font-size: 26px;">Find answers to
                 all your questions in the FAQ</h2>
-            <button class="button1" onclick="">Learn more</button>
+            <button class="button1" onclick=""><a href="Aboutus.html" style="text-decoration: none;color: inherit;">Learn more</button>
         </div>
     </div>
 
     <nav class="goToBar">
-        <a class="myBar" href="#Apply">Apply Online</a>
-        <a class="myBar" href="#News">News</a>
-        <a class="myBar" href="#BlogArticle">Blog Articles</a>
-        <a class="myBar" href="#Awards">Awards</a>
+        <a class="myBar" href="#Apply">APPLY ONLINE</a>
+        <a class="myBar" href="#News">NEWS</a>
+        <a class="myBar" href="#BlogArticle">BLOG ARTICLES</a>
+        <a class="myBar" href="#Awards">AWARDS</a>
     </nav>
 
 
@@ -211,13 +237,18 @@
             </div>
             <div class="award">
                 <span class="material-symbols-outlined" style="padding-left:45%">currency_exchange</span>
-                <p style="font-size:20px;font-weight: bolder;text-align: center;">Best Foreign Exchange Provider in Egypt</p>
+                <p style="font-size:20px;font-weight: bolder;text-align: center;">Best Foreign Exchange Provider in
+                    Egypt</p>
             </div>
         </div>
     </section>
-    <div class="footer-container">
-        <p style="text-align: right;font-size: 15px;">&copy; 2023 Celviki Inc. All rights reserved.</p>
-    </div>
+    <footer class="footer">
+        <div class="footer-content">
+          <p>&copy; 2023 Cilvcki Bank. All rights reserved.</p>
+        </div>
+      </footer>
+    
+    <script src="homePageClient.js"></script>
 </body>
 
 </html>

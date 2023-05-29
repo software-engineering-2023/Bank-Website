@@ -9,27 +9,70 @@
 </head>
 
 <body>
-    <div class="backGroundForTheLogo">
-        <div class="left-section">
-          <img src="public\playground_assets\logo.png" alt="logo" id="img1" class="logo">
-        </div>
-        <div class="right-section">
-    
-          <img src="public\playground_assets\marker.png" class="fa fa-phone">
-          <a href="atmFinder.html" style="text-decoration: none;"><span class="findATM">Branch & ATM Finder</span></a>
-          <img src="public/playground_assets/phoneSymbol.png" class="fa fa-phone">
-          <a href="ContactUs" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
-          <button class="button" onclick="">Login</button>
-        </div>
-      </div>
-      <nav>
+  <div class="backGroundForTheLogo">
+    <div class="left-section">
+      <img src="public\playground_assets\logo.png" alt="logo" id="img1" class="logo">
+    </div>
+    <div class="right-section">
+
+      <img src="public\playground_assets\marker.png" class="fa fa-phone">
+      <a href="atmFinder.html" style="text-decoration: none;"><span class="findATM">Branch & ATM Finder</span></a>
+      <img src="public/playground_assets/phoneSymbol.png" class="fa fa-phone">
+      <a href="ContactUs.html" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
+      <a class="text" href="#" style="text-decoration: none;"> Notifications and Reminders</a>
+      <button class="button" onclick="">Login</button>
+    </div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="homePageClient.html">Home</a></li>
+      <li><a href="Aboutus.html">About Us</a></li>
+      <li><a href="transactions.html">My Account</a></li>
+      <li><a href="reports.html">Report a Problem?</a></li>
+    </ul>
+  </nav>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <h2>Notifications</h2>
+      <nav class="notification-nav">
         <ul>
-          <li><a href="homePageClient.html">Home</a></li>
-          <li><a href="Aboutus.html">About Us</a></li>
-          <li><a href="transactions.html">My Account</a></li>
-          <li><a href="reports.html">Report a Problem?</a></li>
+          <li><a href="#" class="active" data-tab="unread">Unread</a></li>
+          <li><a href="#" data-tab="read">Read</a></li>
+          <li><a href="#" data-tab="reminder">Create a Reminder</a></li>
         </ul>
       </nav>
+      <div class="notification-section" id="unread-section">
+        <h3>Unread Notifications</h3>
+        <div class="notification-list">
+          <!-- Unread notifications will be dynamically populated here -->
+        </div>
+        <button id="mark-read-btn">Mark as Read</button>
+      </div>
+      <div class="notification-section" id="read-section" style="display: none;">
+        <h3>Read Notifications</h3>
+        <div class="notification-list">
+          <!-- Read notifications will be dynamically populated here -->
+        </div>
+      </div>
+      <div class="notification-section" id="reminder-section" style="display: none;">
+        <h3>Create a Reminder</h3>
+        <form id="create-reminder-form">
+          <div class="form-group">
+            <label for="reminder-title">Title:</label>
+            <input type="text" id="reminder-title" class="input" />
+          </div>
+          <div class="form-group">
+            <label for="reminder-date">Date:</label>
+            <input type="date" id="reminder-date" class="input" />
+          </div>
+          <input type="submit" value="Submit" class="submit-btn" />
+        </form>
+        <p id="success-message">Reminder created successfully!</p>
+      </div>
+    </div>
+  </div>
     <main>
 
         <form id="reportForm">
@@ -39,8 +82,9 @@
             <div class="form-group">
                 <label for="reportType">Report Type:</label>
                 <select id="reportType" name="reportType">
-                    <option value="bug">Bug Report</option>
-                    <option value="account">Account Report</option>
+                    <option value="Bug Report">Bug Report</option>
+                    <option value="Account Report">Account Report</option>
+                    <option value="Credit Card report">Credit Card Report</option>
                 </select>
             </div>
             <div class="form-group">
@@ -71,7 +115,6 @@
     <footer class="footer">
         <div class="footer-content">
           <p>&copy; 2023 Cilvcki Bank. All rights reserved.</p>
-          <p><a href="moreInformation.html">Privacy Policy</a> | <a href="moreInformation.html">Terms and Conditions</a></p>
         </div>
       </footer>
     <script src="script.js"></script>

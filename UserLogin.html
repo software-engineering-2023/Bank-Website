@@ -31,9 +31,8 @@
 
         <button class="btn">Login</button>
 
-        <p class="text">Don't have an account ? <a href="Register.html">register</a></p>
-        <p class="text">Forgot your Password ? <a class="forgot-password">forget password</a></p>
-
+        <p class="text">Don't have an account ? <a class="register" href="#">register</a></p>
+        <p class="text">Forgot your Password ? <a class="forgot-password" href="#">forget password</a></p>
       </form>
 
     </div>
@@ -53,37 +52,27 @@
           <input type="password" id="confirm-password" name="confirm-password" class="input"><br><br>
           <input type="submit" value="Confirm" class="input">
         </form>
-        <p id="success-message" style="display:none;">Password changed successfully!</p>
       </div>
     </div>
+
+
+    <div id="popup1" class="popup">
+      <div class="popup-content">
+        <span class="close1">&times;</span>
+        <h2>Register</h2>
+        <p>Fill out the form to get started</p>
+        <form class="form" id="register-form" class="form">
+          <label for="email" class="label">Email:</label>
+          <input type="email" id="email" name="email" class="input"><br><br>
+          <label for="password" class="label">New Password:</label>
+          <input type="password" id="password" name="password" class="input"><br><br>
+          <label for="confirm-password" class="label">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" class="input"><br><br>
+          <input type="submit" value="Register" class="input">
+        </form>
+      </div>
+    </div>
+    
     <script src="UserLoginScript.js"></script>
   </body>
-
-  <script>
-    // Get the pop-up element
-    var popup = document.getElementById("popup");
-    
-    // Getthe button that opens the pop-up
-    var btn = document.querySelector(".forgot-password");
-    
-    // Get the close button element
-    var close = document.querySelector(".close");
-    
-    // When the user clicks on the button, open the pop-up
-    btn.onclick = function() {
-      popup.style.display = "block";
-    }
-    
-    // When the user clicks on the close button, close the pop-up
-    close.onclick = function() {
-      popup.style.display = "none";
-    }
-    
-    // When the user clicks outside of the pop-up, close it
-    window.onclick = function(event) {
-      if (event.target == popup) {
-        popup.style.display = "none";
-      }
-    }
-  </script>
 </html>

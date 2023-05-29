@@ -1,71 +1,19 @@
-// transactions.js
-
-// Wait for the DOM to load
-document.addEventListener('DOMContentLoaded', function() {
-  // Find the "Try Now" button
-  var tryNowBtn = document.querySelector('.try-now-btn');
-
-  // Add a click event listener to the button
-  tryNowBtn.addEventListener('click', function(event) {
-    // Prevent the default behavior of the button
-    event.preventDefault();
-
-    // Redirect the user to "bills.html"
-    window.location.href = 'bills.html';
-  });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  var transactionTypeDropdown = document.getElementById('transaction-type');
-  var transactionHistory = document.getElementById('transaction-history');
-
-  transactionTypeDropdown.addEventListener('change', function() {
-    var selectedType = transactionTypeDropdown.value;
-
-    if (selectedType === 'bank-account') {
-      // Dummy Bank Account Transactions
-      var dummyTransactions = [
-        { date: '2023-05-20', description: 'Deposit', amount: '1000 USD' },
-        { date: '2023-05-18', description: 'Withdrawal', amount: '500 USD' },
-        { date: '2023-05-15', description: 'Deposit', amount: '2000 USD' }
-      ];
-
-      renderTransactionHistory(dummyTransactions);
-    } else if (selectedType === 'credit-card') {
-      // Dummy Credit Card Transactions
-      var dummyTransactions = [
-        { date: '2023-05-19', description: 'Online Purchase', amount: '150 USD' },
-        { date: '2023-05-16', description: 'Restaurant Bill', amount: '75 USD' },
-        { date: '2023-05-12', description: 'Retail Store', amount: '50 USD' }
-      ];
-
-      renderTransactionHistory(dummyTransactions);
-    }
-  });
-
-  // Trigger the change event on page load
-  transactionTypeDropdown.dispatchEvent(new Event('change'));
-
-  function renderTransactionHistory(transactions) {
-    transactionHistory.innerHTML = '';
-
-    if (transactions.length === 0) {
-      transactionHistory.innerHTML = '<p>No transactions found.</p>';
-    } else {
-      transactions.forEach(function(transaction) {
-        var transactionItem = document.createElement('div');
-        transactionItem.classList.add('transaction-item');
-        transactionItem.innerHTML = '<p>Date: ' + transaction.date + '</p>' +
-                                    '<p>Description: ' + transaction.description + '</p>' +
-                                    '<p>Amount: ' + transaction.amount + '</p>';
-
-        transactionHistory.appendChild(transactionItem);
-      });
-    }
-  }
-});
-
+function showCustomMap(elementId) {
+    // Get the map iframe element
+    var mapFrame = document.getElementById('mapFrame');
+    var url = "";
+    if(elementId == 1)
+        url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220517.28613173313!2d31.462564886718734!3d30.277472000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1457fdb0a207b82b%3A0x209bed5ce396e4b2!2sCIB%20-%20Commercial%20International%20Bank!5e0!3m2!1sen!2seg!4v1685321934333!5m2!1sen!2seg";
+    else if(elementId == 2)
+        url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.4446186676046!2d31.235410424083366!3d30.024099719536977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145847378a767335%3A0x48de3b2f36b35296!2sAtm%20ciB!5e0!3m2!1sen!2seg!4v1685322668853!5m2!1sen!2seg";
+    else if(elementId == 3)
+        url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13824.461080018435!2d30.926470756530776!3d29.976117103760895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145856f852e15739%3A0x44dcecacc324a99e!2sCIB!5e0!3m2!1sen!2seg!4v1685322754843!5m2!1sen!2seg";
+    else if(elementId == 4)
+        url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.2911404477422!2d31.335062674084927!3d30.057188117969407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e65c5c6db47%3A0x2c969f8f37177822!2sCIB%20-%20Commercial%20International%20Bank!5e0!3m2!1sen!2seg!4v1685322796981!5m2!1sen!2seg";
+    else if(elementId == 5)
+        url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110504.89983973019!2d31.255234379388696!3d30.057561431147175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145815db1a20f275%3A0x370c3de113a88a31!2sCommercial%20International%20Bank!5e0!3m2!1sen!2seg!4v1685322850510!5m2!1sen!2seg";
+    mapFrame.src = url;
+}
 // Get the pop-up element
 var popup = document.getElementById("popup");
 
@@ -206,3 +154,4 @@ notificationsData.forEach(function(notification) {
 
   unreadNotificationList.appendChild(notificationItem);
 });
+

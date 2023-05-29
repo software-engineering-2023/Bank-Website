@@ -3,7 +3,8 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="transactions.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
@@ -19,7 +20,7 @@
       <a href="ContactUs.html" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
       <span class="material-symbols-outlined" style="color: white;font-size: 16px;">
         notifications
-        </span>
+      </span>
       <a class="text" href="#" style="text-decoration: none;"><span class="notify">Notifications and
           Reminders</span></a>
       <button class="button" onclick="">Login</button>
@@ -133,14 +134,7 @@
       </div>
 
       <!--  section for viewing credit card points-->
-      <!-- HTML -->
       <style>
-        .section-content {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
         .subtitle2 {
           text-align: center;
           margin-top: 0;
@@ -201,16 +195,24 @@
         var creditCardPointsDiv = document.getElementById('credit-card-points');
         var currentPoints = 1000; // Initial points
         var currentPointsDiv;
+        var pointsVisible = false; // Track the visibility state
 
         learnBtn.addEventListener('click', function () {
-          creditCardPointsDiv.innerHTML = ''; // Clear previous options
-          currentPointsDiv = createCurrentPointsDiv();
-          creditCardPointsDiv.appendChild(currentPointsDiv);
+          if (pointsVisible) {
+            creditCardPointsDiv.innerHTML = ''; // Clear options
+            pointsVisible = false;
+          } else {
+            creditCardPointsDiv.innerHTML = ''; // Clear previous options
+            currentPointsDiv = createCurrentPointsDiv();
+            creditCardPointsDiv.appendChild(currentPointsDiv);
 
-          var randomOptionsCount = Math.floor(Math.random() * 5) + 1; // Random number of options
-          for (var i = 0; i < randomOptionsCount; i++) {
-            var option = createOption();
-            creditCardPointsDiv.appendChild(option);
+            var randomOptionsCount = Math.floor(Math.random() * 5) + 1; // Random number of options
+            for (var i = 0; i < randomOptionsCount; i++) {
+              var option = createOption();
+              creditCardPointsDiv.appendChild(option);
+            }
+
+            pointsVisible = true;
           }
         });
 
@@ -288,7 +290,6 @@
       </script>
       <!--end section  -->
 
-      <!--end section  -->
 
       <div class="section">
         <div class="section-title-bar">

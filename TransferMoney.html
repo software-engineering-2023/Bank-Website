@@ -91,9 +91,11 @@
       </div>
     </div>
   </div>
+
+
   <h1>Transfer Money</h1>
   <p>Current Balance: $<span id="balance">1000.00</span></p>
-  <form action="transfer.php" method="post" onsubmit="">
+  <form id="transfer_form">
     <label for="from_account">From Account:</label>
     <select id="from_account" name="from_account">
       <option value="account1">Account 1</option>
@@ -115,25 +117,17 @@
       <label for="bank_branch">Bank Branch:</label>
       <input type="text" id="bank_branch" name="bank_branch"><br><br>
     </div>
-    <input type="submit" value="Transfer">
+    <input type="button" class="transfer_button"value="Transfer" id="transfer_button">
   </form>
-  <script>
-    document.getElementById("transfer_type").addEventListener("change", function () {
-      var bankDetails = document.getElementById("bank_details");
-      if (this.value === "domestic" || this.value === "international") {
-        bankDetails.style.display = "block";
-      } else {
-        bankDetails.style.display = "none";
-      }
-    });
-  </script>
+  <p id="submission_message"></p>
 
   <script src="TransferMoney.js"></script>
-  <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; 2023 Cilvcki Bank. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2023 Cilvcki Bank. All rights reserved.</p>
+      </div>
+    </footer>
+
 </body>
 
 </html>

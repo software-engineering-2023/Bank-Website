@@ -1,0 +1,66 @@
+h1 {
+    text-align: center;
+  }
+  
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #006400;
+  }
+  
+  .container {
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .miniContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 250px;
+    margin-top: 10%;
+    flex-wrap: wrap;
+  }
+  
+  .backGroundForTheLogo {
+    background-color: rgba(4, 49, 54, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  /* Add your additional CSS styles here */
+  

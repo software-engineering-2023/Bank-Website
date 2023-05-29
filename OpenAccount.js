@@ -140,84 +140,47 @@ notificationsData.forEach(function (notification) {
     unreadNotificationList.appendChild(notificationItem);
 });
 
-// Get the necessary elements
-var balanceElement = document.getElementById("balance");
-var transferForm = document.getElementById("transfer_form");
-var bankDetails = document.getElementById("bank_details");
-var transferButton = document.getElementById("transfer_button");
+// JavaScript for account opening form validation
+var openAccountForm = document.getElementById("open_account_form");
 var submissionMessage = document.getElementById("submission_message");
 
-// Add event listener to the transfer button
-transferButton.addEventListener("click", function () {
+openAccountForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
     // Get the input values
-    var fromAccount = document.getElementById("from_account").value;
-    var toAccount = document.getElementById("to_account").value;
-    var amount = parseFloat(document.getElementById("amount").value);
-    var transferType = document.getElementById("transfer_type").value;
-    var bankName = document.getElementById("bank_name").value;
-    var bankBranch = document.getElementById("bank_branch").value;
+    var accountType = document.getElementById("account_type").value;
+    var initialDeposit = parseFloat(document.getElementById("initial_deposit").value);
+    var customerName = document.getElementById("customer_name").value;
+    var customerEmail = document.getElementById("customer_email").value;
+    var customerPhone = document.getElementById("customer_phone").value;
 
     // Perform validation
-    if (fromAccount === "" || toAccount === "" || isNaN(amount) || amount <= 0 || amount > parseFloat(balanceElement.textContent)) {
-        if (amount > parseFloat(balanceElement.textContent)) {
-            submissionMessage.textContent = "Insufficient funds. Please check your balance.";
-            submissionMessage.classList.add("error");
-        } 
-        else if (isNaN(amount)) {
-            submissionMessage.textContent = "Invalid amount. Please check your entries.";
-            submissionMessage.classList.add("error");
-        }
-        else if (amount <= 0) {
-            submissionMessage.textContent = "Amount Cannot be negative. Please check your entries.";
-            submissionMessage.classList.add("error");
-        }
-        else if (fromAccount === "" || toAccount === "") {
-            submissionMessage.textContent = "Please select the account numbers.";
-            submissionMessage.classList.add("error");
-        }
-        else {
-            submissionMessage.textContent = "Invalid input. Please check your entries.";
-            submissionMessage.classList.add("error");
-        }
+    if (
+        accountType.trim() === "" ||
+        isNaN(initialDeposit) ||
+        initialDeposit <= 0 || // Check for positive value
+        !Number.isInteger(initialDeposit) ||
+        customerName.trim() === "" ||
+        customerEmail.trim() === "" ||
+        customerPhone.trim() === ""
+    ) {
+        submissionMessage.textContent = "Please fill in all fields correctly.";
+        submissionMessage.classList.add("error");
+    } else if (!isValidEmail(customerEmail)) {
+        submissionMessage.textContent = "Please enter a valid email address.";
+        submissionMessage.classList.add("error");
     } else {
-        // Calculate the updated balance
-        var currentBalance = parseFloat(balanceElement.textContent);
-        var updatedBalance = currentBalance - amount;
-
-        // Update the balance display
-        balanceElement.textContent = updatedBalance.toFixed(2);
-
-        // Prepare the submission message
-        var message = "Transfer successful. ";
-        if (transferType === "domestic" || transferType === "international") {
-            if (bankName === "" || bankBranch === "") {
-                submissionMessage.textContent = "Please enter the bank name and bank branch.";
-                submissionMessage.classList.add("error");
-                return;
-            }
-            message += "Bank Name: " + bankName + ", Bank Branch: " + bankBranch + ". ";
-        }
-        message += "You will be transferring $" + amount.toFixed(2) + " from Account " + fromAccount + " to Account " + toAccount + ".";
-
-        submissionMessage.textContent = message;
+        submissionMessage.textContent = "Account opened successfully!";
         submissionMessage.classList.remove("error");
-    }
+        submissionMessage.classList.add("success");
 
-    // Reset the form
-    transferForm.reset();
-
-    // Reset transfer type and hide bank details for internal transfer
-    document.getElementById("transfer_type").value = "internal";
-    bankDetails.style.display = "none";
-});
-
-// Add event listener to the transfer type select element
-document.getElementById("transfer_type").addEventListener("change", function () {
-    if (this.value === "domestic" || this.value === "international") {
-        bankDetails.style.display = "block";
-    } else {
-        bankDetails.style.display = "none";
+        // Reset the form
+        openAccountForm.reset();
     }
 });
 
-
+function isValidEmail(email) {
+    // Email validation regex pattern
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+}

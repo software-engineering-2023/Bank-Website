@@ -16,7 +16,8 @@
       <a href="atmFinder.html" style="text-decoration: none;"><span class="findATM">Branch & ATM Finder</span></a>
       <img src="public/playground_assets/phoneSymbol.png" class="fa fa-phone">
       <a href="ContactUs.html" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
-      <a class="text" href="#" style="text-decoration: none;"><span class="notify">Notifications and Reminders</span></a>
+      <a class="text" href="#" style="text-decoration: none;"><span class="notify">Notifications and
+          Reminders</span></a>
       <button class="button" onclick="">Login</button>
     </div>
   </div>
@@ -127,143 +128,161 @@
         </div>
       </div>
 
-<!--  section for viewing credit card points-->
-<style>
-  .section-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+      <!--  section for viewing credit card points-->
+      <!-- HTML -->
+      <style>
+        .section-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
 
-  .subtitle2 {
-    text-align: center;
-    margin-top: 0;
-  }
+        .subtitle2 {
+          text-align: center;
+          margin-top: 0;
+        }
 
-  .btn-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-  }
+        .btn-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 10px;
+        }
 
-  .try-now-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+        .try-now-btn {
+          padding: 10px 20px;
+          font-size: 16px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
 
-  .content-item {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-  }
+        .content-item {
+          margin-bottom: 10px;
+          padding: 10px;
+          background-color: #ffffff;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          width: 300px;
+          text-align: center;
+        }
 
-  .content-item p {
-    margin: 0;
-  }
-</style>
+        .content-item p {
+          margin: 0;
+        }
 
-<div class="section">
-  <div class="section-title-bar">
-    <h2 class="section-title">Credit Card Points</h2>
-  </div>
-  <div class="section-content">
-    <h3 class="subtitle2">Learn about your credit card points, cashback, and rewards</h3>
-    <div class="btn-container">
-      <button id="learn-btn" class="try-now-btn">Learn Now</button>
-      <div id="current-points"></div>
-      <div id="credit-card-points"></div>
-    </div>
-  </div>
-</div>
+        .reward-message {
+          font-weight: bold;
+          color: #4CAF50;
+        }
+      </style>
 
-<script>
-  var learnBtn = document.getElementById('learn-btn');
-  var creditCardPointsDiv = document.getElementById('credit-card-points');
-  var currentPointsDiv = document.getElementById('current-points');
-  var currentPoints = 1000; // Assuming an initial value of 1000 points
+      <div class="section">
+        <div class="section-title-bar">
+          <h2 class="section-title">Credit Card Points</h2>
+        </div>
+        <div class="section-content">
+          <h3 class="subtitle2">Learn about your credit card points, cashback, and rewards</h3>
+          <div class="btn-container">
+            <button id="learn-btn" class="try-now-btn">Learn Now</button>
+            <div id="credit-card-points"></div>
+          </div>
+        </div>
+      </div>
 
-  learnBtn.addEventListener('click', function () {
-    var currentPointsDisplay = document.createElement('p');
-    currentPointsDisplay.textContent = 'Current Points: ' + currentPoints;
-    currentPointsDiv.innerHTML = '';
-    currentPointsDiv.appendChild(currentPointsDisplay);
+      <script>
+        var learnBtn = document.getElementById('learn-btn');
+        var creditCardPointsDiv = document.getElementById('credit-card-points');
+        var currentPoints = 1000; // Initial points
+        var currentPointsDiv;
 
-    var options = generateRedemptionOptions();
+        learnBtn.addEventListener('click', function () {
+          creditCardPointsDiv.innerHTML = ''; // Clear previous options
+          currentPointsDiv = createCurrentPointsDiv();
+          creditCardPointsDiv.appendChild(currentPointsDiv);
 
-    creditCardPointsDiv.innerHTML = '';
-    for (var i = 0; i < options.length; i++) {
-      var contentItem = createRedemptionOption(options[i]);
-      creditCardPointsDiv.appendChild(contentItem);
-    }
-  });
+          var randomOptionsCount = Math.floor(Math.random() * 5) + 1; // Random number of options
+          for (var i = 0; i < randomOptionsCount; i++) {
+            var option = createOption();
+            creditCardPointsDiv.appendChild(option);
+          }
+        });
 
-  function generateRedemptionOptions() {
-    // Generate dummy redemption options
-    var options = [
-      '10% off at Pizza Hut!',
-      '30% CashBack from Virgin',
-      'Win an iPhone 14 from Tradeline',
-      '50% discount on movie tickets',
-      'Free weekend stay at a luxury hotel'
-    ];
+        function createOption() {
+          var option = document.createElement('div');
+          option.className = 'content-item';
 
-    // Generate a random number of options each time
-    var randomOptionsCount = Math.floor(Math.random() * 5) + 1;
-    var randomOptions = [];
-    for (var i = 0; i < randomOptionsCount; i++) {
-      var randomIndex = Math.floor(Math.random() * options.length);
-      randomOptions.push(options[randomIndex]);
-      options.splice(randomIndex, 1); // Remove selected option to avoid duplicates
-    }
+          var pointsNeeded = Math.floor(Math.random() * 100) + 1; // Random points needed for the option
 
-    return randomOptions;
-  }
+          var pointsNeededParagraph = document.createElement('p');
+          pointsNeededParagraph.textContent = 'Points Needed: ' + pointsNeeded;
 
-  function createRedemptionOption(option) {
-    var contentItem = document.createElement('div');
-    contentItem.classList.add('content-item');
-    var optionText = document.createElement('p');
-    optionText.textContent = option;
-    var redeemButton = document.createElement('button');
-    redeemButton.classList.add('try-now-btn');
-    redeemButton.textContent = 'Redeem';
-    redeemButton.addEventListener('click', function () {
-      redeemOption(option);
-      contentItem.style.display = 'none';
-    });
+          var optionName = getRandomOptionName(); // Random option name
+          var optionNameParagraph = document.createElement('p');
+          optionNameParagraph.textContent = optionName;
 
-    contentItem.appendChild(optionText);
-    contentItem.appendChild(redeemButton);
+          var redeemButton = document.createElement('button');
+          redeemButton.className = 'try-now-btn';
+          redeemButton.textContent = 'Redeem';
+          redeemButton.addEventListener('click', function () {
+            redeemOption(pointsNeeded, optionName, option);
+          });
 
-    return contentItem;
-  }
+          option.appendChild(pointsNeededParagraph);
+          option.appendChild(optionNameParagraph);
+          option.appendChild(redeemButton);
 
-  function redeemOption(option) {
-    // Update current points by deducting a random amount
-    var pointsNeeded = Math.floor(Math.random() * 100) + 1;
-    if (currentPoints >= pointsNeeded) {
-      currentPoints -= pointsNeeded;
-      console.log('Redemption submitted:', option);
-      console.log('Points deducted:', pointsNeeded);
-    } else {
-      console.log('Insufficient points for redemption.');
-    }
-  }
-</script>
-<!--end section  -->
+          return option;
+        }
 
+        function getRandomOptionName() {
+          var options = [
+            '10% off at Pizza Hut!',
+            '30% CashBack from Virgin',
+            'Win an iPhone 14 from Tradeline',
+            'Free movie ticket at Cineplex',
+            'Gift voucher for Amazon'
+          ];
+          var randomIndex = Math.floor(Math.random() * options.length);
+          return options[randomIndex];
+        }
 
+        function createCurrentPointsDiv() {
+          var currentPointsDiv = document.createElement('div');
+          currentPointsDiv.className = 'content-item';
 
+          var currentPointsParagraph = document.createElement('p');
+          currentPointsParagraph.textContent = 'Current Points: ' + currentPoints;
+
+          currentPointsDiv.appendChild(currentPointsParagraph);
+
+          return currentPointsDiv;
+        }
+
+        function redeemOption(pointsNeeded, optionName, option) {
+          if (currentPoints >= pointsNeeded) {
+            currentPoints -= pointsNeeded;
+            updateCurrentPoints();
+
+            var rewardMessage = document.createElement('p');
+            rewardMessage.className = 'reward-message';
+            rewardMessage.textContent = 'Congratulations! You won ' + optionName;
+            creditCardPointsDiv.insertBefore(rewardMessage, option.nextSibling);
+
+            option.remove();
+          } else {
+            console.log('Insufficient points for redemption.');
+          }
+        }
+
+        function updateCurrentPoints() {
+          var currentPointsParagraph = currentPointsDiv.querySelector('p');
+          currentPointsParagraph.textContent = 'Current Points: ' + currentPoints;
+        }
+      </script>
+      <!--end section  -->
 
       <!--end section  -->
 

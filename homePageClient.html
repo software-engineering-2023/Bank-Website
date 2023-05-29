@@ -16,6 +16,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- JS -->
+    <!-- <script src="homePageClient.js"></script> -->
     <script>
         var prevScrollPos = window.pageYOffset;
 
@@ -30,7 +31,6 @@
 
             prevScrollPos = currentScrollPos;
         };
-
     </script>
 </head>
 
@@ -38,25 +38,52 @@
 
     <div class="backGroundForTheLogo">
         <div class="left-section">
-            <img src="public\playground_assets\logo.png" alt="logo" id="img1" class="logo">
+          <img src="public\playground_assets\logo.png" alt="logo" id="img1" class="logo">
         </div>
         <div class="right-section">
-
-            <img src="public\playground_assets\marker.png" class="fa fa-phone">
-            <a href="atmFinder.html" style="text-decoration: none;"><span class="findATM">Branch & ATM Finder</span></a>
-            <img src="public/playground_assets/phoneSymbol.png" class="fa fa-phone">
-            <a href="ContactUs.html" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
-            <button class="button" onclick="">Login</button>
+    
+          <img src="public\playground_assets\marker.png" class="fa fa-phone">
+          <a href="atmFinder.html" style="text-decoration: none;"><span class="findATM">Branch & ATM Finder</span></a>
+          <img src="public/playground_assets/phoneSymbol.png" class="fa fa-phone">
+          <a href="ContactUs.html" style="text-decoration: none;"><span class="contactUs">Contact Us</span></a>
+          <a class="text" href="#" style="text-decoration: none;"> Notifications </a>
+          <button class="button" onclick="">Login</button>
         </div>
-    </div>
-
-    <nav>
-        <a href="HomePage.html">Home</a>
-        <a href="Aboutus.html">About Us</a>
-        <a href="Radio&OptimizationPage.html">Radio</a>
-        <a href="TransmissionPage.html">Transmission</a>
-        <div class="animation start-home animation"></div>
-    </nav>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="homePageClient.html">Home</a></li>
+          <li><a href="Aboutus.html">About Us</a></li>
+          <li><a href="transactions.html">My Account</a></li>
+          <li><a href="reports.html">Report a Problem?</a></li>
+        </ul>
+      </nav>
+    
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close">&times;</span>
+          <h2>Notifications</h2>
+          <nav class="notification-nav">
+            <ul>
+              <li><a href="#" class="active" data-tab="unread">Unread</a></li>
+              <li><a href="#" data-tab="read">Read</a></li>
+            </ul>
+          </nav>
+          <div class="notification-section" id="unread-section">
+            <h3>Unread Notifications</h3>
+            <div class="notification-list">
+              <!-- Unread notifications will be dynamically populated here -->
+            </div>
+            <button id="mark-read-btn">Mark as Read</button>
+          </div>
+          <div class="notification-section" id="read-section" style="display: none;">
+            <h3>Read Notifications</h3>
+            <div class="notification-list">
+              <!-- Read notifications will be dynamically populated here -->
+            </div>
+          </div>
+        </div>
+      </div>
 
 
     <div class="changingWallpaper">
@@ -73,10 +100,10 @@
     </div>
 
     <nav class="goToBar">
-        <a class="myBar" href="#Apply">Apply Online</a>
-        <a class="myBar" href="#News">News</a>
-        <a class="myBar" href="#BlogArticle">Blog Articles</a>
-        <a class="myBar" href="#Awards">Awards</a>
+        <a class="myBar" href="#Apply">APPLY ONLINE</a>
+        <a class="myBar" href="#News">NEWS</a>
+        <a class="myBar" href="#BlogArticle">BLOG ARTICLES</a>
+        <a class="myBar" href="#Awards">AWARDS</a>
     </nav>
 
 

@@ -165,9 +165,11 @@ createReminderForm.addEventListener("submit", function (event) {
 
 // Generate dummy notifications
 var notificationsData = [
-  { type: "meeting", title: "Strategy Meeting", dueDate: "2023-06-01" },
-  { type: "problem", title: "Employee Issue", dueDate: "2023-06-05" },
-  { type: "decision", title: "Important Decision", dueDate: "2023-06-10" },
+  { type: "meeting", title: "Client Meeting", dueDate: "2023-06-02" },
+  { type: "task", title: "New Task Assigned", dueDate: "2023-06-07" },
+  { type: "message", title: "Important Message", dueDate: "2023-06-12" },
+  { type: "problem", title: "Employee Problem", dueDate: "2023-06-18" },
+  { type: "decision", title: "Important Decision", dueDate: "2023-06-23" },
 ];
 
 var unreadNotificationList = unreadSection.querySelector(".notification-list");
@@ -182,4 +184,3 @@ notificationsData.forEach(function (notification) {
 
   unreadNotificationList.appendChild(notificationItem);
 });
-

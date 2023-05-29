@@ -99,3 +99,5 @@ notificationsData.forEach(function(notification) {
 
   unreadNotificationList.appendChild(notificationItem);
 });
+
+

@@ -44,6 +44,10 @@ a.text {
     text-decoration: underline;
 }
 
+.notify:hover{
+    text-decoration: underline;
+}
+
 .button {
     background-color: white;
     color: green;

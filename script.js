@@ -49,54 +49,94 @@ window.onclick = function(event) {
 
 
 // notifications.js
-// Get the notification sections
+// JavaScript for the pop-up
+var popup = document.getElementById("popup");
+var link = document.querySelector(".text");
+var close = document.querySelector(".close");
+
+link.onclick = function() {
+  popup.style.display = "block";
+};
+
+close.onclick = function() {
+  popup.style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target === popup) {
+    popup.style.display = "none";
+  }
+};
+
+// JavaScript for the notification functionality
 var unreadSection = document.getElementById("unread-section");
 var readSection = document.getElementById("read-section");
+var reminderSection = document.getElementById("reminder-section");
 
-// Get the "Mark as Read" button
 var markReadBtn = document.getElementById("mark-read-btn");
-
-// Add event listener to the "Mark as Read" button
 markReadBtn.addEventListener("click", function() {
-  // Get all checked notification checkboxes in the unread section
   var checkboxes = unreadSection.querySelectorAll(".notification-checkbox:checked");
 
-  // Move checked notifications to the read section
   checkboxes.forEach(function(checkbox) {
     var notification = checkbox.parentNode;
     var notificationMessage = document.createElement("p");
     notificationMessage.className = "notification-message";
     notificationMessage.textContent = notification.querySelector(".notification-due").textContent;
     readSection.querySelector(".notification-list").appendChild(notificationMessage);
-    
-    // Remove the notification from the unread section
     notification.parentNode.removeChild(notification);
   });
 });
 
-// Update the active tab when clicking on the notification nav links
 var notificationNavLinks = document.querySelectorAll(".notification-nav a");
-
 notificationNavLinks.forEach(function(link) {
   link.addEventListener("click", function(event) {
     event.preventDefault();
     var tab = link.getAttribute("data-tab");
 
-    // Show the selected section and hide the other section
     if (tab === "unread") {
       unreadSection.style.display = "block";
       readSection.style.display = "none";
+      reminderSection.style.display = "none";
     } else if (tab === "read") {
       unreadSection.style.display = "none";
       readSection.style.display = "block";
+      reminderSection.style.display = "none";
+    } else if (tab === "reminder") {
+      unreadSection.style.display = "none";
+      readSection.style.display = "none";
+      reminderSection.style.display = "block";
     }
 
-    // Update the active class for the navigation links
     notificationNavLinks.forEach(function(navLink) {
       navLink.classList.remove("active");
     });
     link.classList.add("active");
   });
+});
+
+var createReminderForm = document.getElementById("create-reminder-form");
+createReminderForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var reminderTitle = document.getElementById("reminder-title").value;
+  var reminderDate = document.getElementById("reminder-date").value;
+
+  if (reminderTitle && reminderDate) {
+    var reminderItem = document.createElement("div");
+    reminderItem.className = "notification-item";
+    reminderItem.innerHTML = `
+      <span class="notification-title">You will be reminded on ${reminderDate} about: ${reminderTitle}</span>
+    `;
+
+    unreadSection.querySelector(".notification-list").appendChild(reminderItem);
+    createReminderForm.reset();
+    document.getElementById("success-message").style.display = "block";
+    setTimeout(function() {
+      document.getElementById("success-message").style.display = "none";
+    }, 2000);
+  } else {
+    alert("Please fill in all fields");
+  }
 });
 
 // Generate dummy notifications
@@ -110,7 +150,6 @@ var notificationsData = [
 ];
 
 var unreadNotificationList = unreadSection.querySelector(".notification-list");
-
 notificationsData.forEach(function(notification) {
   var notificationItem = document.createElement("div");
   notificationItem.className = "notification-item";

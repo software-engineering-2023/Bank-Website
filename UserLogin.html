@@ -11,7 +11,7 @@
       <h1>Please Log in</h1>
       <form action="">
         <div class="form-control">
-          <input type="text" name="" id="" required />
+          <input type="text" name="" id="email" required />
           <label>Email
 
             <!-- <label>
@@ -25,11 +25,11 @@
         </div>
 
         <div class="form-control">
-          <input type="password" name="" id="" required />
+          <input type="password" name="" id="pass" required />
           <label>Password</label>
         </div>
 
-        <button class="btn">Login</button>
+        <button class="btn" onclick="loginInUserPage()">Login</button>
 
         <p class="text">Don't have an account ? <a class="register" href="#">register</a></p>
         <p class="text">Forgot your Password ? <a class="forgot-password" href="#">forget password</a></p>
@@ -74,5 +74,6 @@
     </div>
     
     <script src="UserLoginScript.js"></script>
+    <script src="glob.js"></script>
   </body>
 </html>

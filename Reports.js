@@ -18,7 +18,7 @@ function submitReport(event) {
   verificationMessage.textContent = 'Report submitted successfully!';
   verificationMessage.style.color = 'green';
 
-  document.getElementById('reportType').value = 'bug';
+  document.getElementById('reportType').value = "Bug Report";
   document.getElementById('reportContent').value = '';
 }
 // Get the pop-up element

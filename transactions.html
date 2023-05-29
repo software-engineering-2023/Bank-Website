@@ -37,6 +37,7 @@
         <ul>
           <li><a href="#" class="active" data-tab="unread">Unread</a></li>
           <li><a href="#" data-tab="read">Read</a></li>
+          <li><a href="#" data-tab="reminder">Create a Reminder</a></li>
         </ul>
       </nav>
       <div class="notification-section" id="unread-section">
@@ -52,8 +53,24 @@
           <!-- Read notifications will be dynamically populated here -->
         </div>
       </div>
+      <div class="notification-section" id="reminder-section" style="display: none;">
+        <h3>Create a Reminder</h3>
+        <form id="create-reminder-form">
+          <div class="form-group">
+            <label for="reminder-title">Title:</label>
+            <input type="text" id="reminder-title" class="input" />
+          </div>
+          <div class="form-group">
+            <label for="reminder-date">Date:</label>
+            <input type="date" id="reminder-date" class="input" />
+          </div>
+          <input type="submit" value="Submit" class="submit-btn" />
+        </form>
+        <p id="success-message">Reminder created successfully!</p>
+      </div>
     </div>
   </div>
+  
   
 
 

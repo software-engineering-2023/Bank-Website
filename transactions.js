@@ -167,3 +167,51 @@ notificationsData.forEach(function(notification) {
 
   unreadNotificationList.appendChild(notificationItem);
 });
+
+// create reminder 
+// Get references to the necessary elements
+const createTab = document.querySelector('[data-tab="create"]');
+const createSection = document.getElementById('create-section');
+const reminderInput = document.getElementById('reminder-input');
+const reminderDate = document.getElementById('reminder-date');
+const submitReminderBtn = document.getElementById('submit-reminder-btn');
+const reminderList = document.getElementById('reminder-list');
+const successMessage = document.getElementById('success-message');
+
+// Show the Create a Reminder section when the corresponding tab is clicked
+createTab.addEventListener('click', () => {
+  // Hide other sections
+  document.getElementById('unread-section').style.display = 'none';
+  document.getElementById('read-section').style.display = 'none';
+
+  // Show Create a Reminder section
+  createSection.style.display = 'block';
+});
+
+// Handle reminder submission
+submitReminderBtn.addEventListener('click', () => {
+  // Get the reminder text and date
+  const reminderText = reminderInput.value;
+  const reminderDateValue = reminderDate.value;
+
+  if (reminderText && reminderDateValue) {
+    // Create a new reminder element
+    const reminderElement = document.createElement('div');
+    reminderElement.textContent = reminderText;
+
+    // Create a new date element
+    const dateElement = document.createElement('span');
+    dateElement.textContent = reminderDateValue;
+
+    // Append the reminder and date elements to the reminder list
+    reminderList.appendChild(reminderElement);
+    reminderList.appendChild(dateElement);
+
+    // Display the success message
+    successMessage.style.display = 'block';
+
+    // Clear the input fields
+    reminderInput.value = '';
+    reminderDate.value = '';
+  }
+});
